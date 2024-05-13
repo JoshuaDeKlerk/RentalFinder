@@ -1,0 +1,222 @@
+p, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+}
+
+body{
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+}
+
+.SignInContainer{
+    height: 100vh;
+    width: 100%;
+    background-color: #E9E9E9;
+    display: flex;
+}
+
+/* Log In Container */
+
+.LogInContainer{
+    width: 65%;
+    height: 100%;
+}
+
+.LogInNavigatorContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.LoginTitle{
+    text-align: center;
+    color: black;
+    font-size: 6vh;
+    font-weight: 700;
+    font-family: "Roboto", sans-serif;
+}
+
+.LoginSubtitle{
+    text-align: center;
+    color: rgba(0, 0, 0, 0.600);
+    font-size: 2.5vh;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+}
+
+.LoginSocials{
+    display: flex;
+    gap: 3vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.socials{
+    width: 8vh;
+}
+
+.LoginSeparator{
+    text-align: center;
+    color: rgba(0, 0, 0, 0.600);
+    font-size: 2.5vh;
+    font-weight: 400;
+    font-family: "Roboto", sans-serif;
+}
+
+.LogInForm{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3vh;
+}
+
+.Icons{
+    width: 4vh;
+}
+
+.EmailForm{
+    width: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.5vh 8vh;
+    border-radius: 50px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.PasswordForm{
+    width: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.5vh 8vh;
+    border-radius: 50px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.LoginButton{
+    padding: 3vh 15vh;
+    background-color: #4277FF;
+    color: white;
+    font-size: 2.5vh;
+    font-weight: 600;
+    border-radius: 50px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+/* Sign Up Container */
+
+.SignUpContainer{
+    width: 35%;
+    height: 100%;
+    background-image: url(../assets/signin/SignInBackground.png);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.SignUpNavigatorContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.LogoAndText{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.LogoAndName{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-bottom: 0.2vh solid #FFF;
+    padding-bottom: 1vh;
+}
+
+.Logo{
+    padding-right: 3vh;
+    width: 25vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 3vh;
+}
+
+.LogoTitle{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #E9E9E9;
+    font-size: 8vh;
+    font-weight: 700;
+    font-family: "Roboto", sans-serif;
+}
+
+.Description{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+.DescriptionTitle{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #E9E9E9;
+    font-size: 6vh;
+    font-weight: 700;
+    font-family: "Roboto", sans-serif;
+    padding-bottom: 2vh;
+}
+
+.DescriptionText{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #E9E9E9;
+    font-size: 3vh;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+
+}
+
+.SignUpButtonContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.SignUpButton{
+    padding: 3vh 15vh;
+    background-color: white;
+    font-size: 2.5vh;
+    font-weight: 600;
+    border-radius: 50px;
+    box-shadow: 0px 2.011px 4.022px 0px rgba(0, 0, 0, 0.10);
+}
