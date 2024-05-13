@@ -7,11 +7,6 @@ import Email from "../assets/signin/Email.svg";
 import Password from "../assets/signin/Password.svg";
 
 function SignUp() {
-  const [showPassword, setShowPassword] = useState(false);
-
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
 
   return (
     <div className='SignUpContainer'>
@@ -49,28 +44,31 @@ function SignUp() {
                         OR
                     </div>
                 </div>
-        <form id="signin-form">
-          <div className="form-group">
-            <label htmlFor="username"><i className="fa fa-user"></i> Username</label>
-            <input type="text" id="username" name="username" placeholder="Enter your username" required />
-          </div>
-          <div className="form-group">
-            <label htmlFor="email"><i className="fa fa-envelope"></i> Email</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required />
-          </div>
-          <div className="form-group">
-            <label htmlFor="password"><i className="fa fa-lock"></i> Password</label>
-            <input type={showPassword ? "text" : "password"} id="password" name="password" placeholder="Enter your password" required />
-            <span className="toggle-password" onClick={togglePasswordVisibility}>
-              <i className={showPassword ? "fa fa-eye-slash" : "fa fa-eye"}></i>
-            </span>
-          </div>
-          <div className="form-group">
-            <label htmlFor="confirm-password"><i className="fa fa-lock"></i> Confirm Password</label>
-            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required />
-          </div>
-          <button type="submit">Sign In</button>
-        </form>
+                <div className='LogInForm'>
+                    <div className='EmailForm'>
+                        <div className='InputEmail'>
+                            <input type="email" placeholder="Email" />
+                        </div>
+                        <div className='Icons'>
+                            <img src={Email} alt="Email" style={{ width: '100%' }} />
+                        </div>
+                    </div>
+                    <div className='PasswordForm'>
+                        <div className='InputPassword'>
+                            <input type="password" placeholder="Password" />
+                        </div>
+                        <div className='Icons'>
+                            <img src={Password} alt="Password" style={{ width: '100%' }} />
+                        </div>
+                    </div>
+                </div>
+          
+                <div className='SignUpButtonContainer'>
+                    <div className='SignUpButton'>
+                        Sign Up
+                    </div>
+                </div>
+
       </div>
     </div>
   );
