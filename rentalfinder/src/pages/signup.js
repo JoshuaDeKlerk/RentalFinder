@@ -3,8 +3,9 @@ import '../css/signUp.css';
 import Logo from "../assets/logo/LogoWhite.svg";
 import Google from "../assets/logo/Google.svg";
 import Facebook from "../assets/logo/Facebook.svg";
-import Email from "../assets/signin/Email.svg";
-import Password from "../assets/signin/Password.svg";
+import Email from "../assets/signup/Email.svg";
+import Password from "../assets/signup/Password.svg";
+import Username from "../assets/signup/Username.svg";
 
 function SignUp() {
 
@@ -47,10 +48,26 @@ function SignUp() {
                 <div className='LogInForm'>
                     <div className='EmailForm'>
                         <div className='InputEmail'>
+                            <input type="email" placeholder="Username" />
+                        </div>
+                        <div className='Icons'>
+                            <img src={Username} alt="Username" style={{ width: '100%' }} />
+                        </div>
+                    </div>
+                    <div className='EmailForm'>
+                        <div className='InputEmail'>
                             <input type="email" placeholder="Email" />
                         </div>
                         <div className='Icons'>
                             <img src={Email} alt="Email" style={{ width: '100%' }} />
+                        </div>
+                    </div>
+                    <div className='PasswordForm'>
+                        <div className='InputPassword'>
+                            <input type="password" placeholder="Confirm Password" />
+                        </div>
+                        <div className='Icons'>
+                            <img src={Password} alt="Password" style={{ width: '100%' }} />
                         </div>
                     </div>
                     <div className='PasswordForm'>
