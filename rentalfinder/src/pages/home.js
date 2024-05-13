@@ -1,6 +1,6 @@
 import React from "react";
 import SignIn from './SignIn';
-import SignUp from './signup';
+// import SignUp from './signup';
 
 function Home() {
     return (
