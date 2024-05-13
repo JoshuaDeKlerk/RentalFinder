@@ -38,6 +38,7 @@ body{
     font-size: 6vh;
     font-weight: 700;
     font-family: "Roboto", sans-serif;
+    padding-bottom: 2vh;
 }
 
 .LoginSubtitle{
@@ -46,6 +47,7 @@ body{
     font-size: 2.5vh;
     font-weight: 500;
     font-family: "Roboto", sans-serif;
+    padding-bottom: 3vh;
 }
 
 .LoginSocials{
@@ -53,10 +55,11 @@ body{
     gap: 3vh;
     align-items: center;
     justify-content: center;
+    padding-bottom: 2vh;
 }
 
 .socials{
-    width: 8vh;
+    width: 10vh;
 }
 
 .LoginSeparator{
@@ -65,6 +68,7 @@ body{
     font-size: 2.5vh;
     font-weight: 400;
     font-family: "Roboto", sans-serif;
+    padding-bottom: 2vh;
 }
 
 .LogInForm{
@@ -74,6 +78,19 @@ body{
     justify-content: center;
     flex-direction: column;
     gap: 3vh;
+    padding-bottom: 6vh;
+}
+
+/* signIn.css */
+.LogInForm input[type="email"],
+.LogInForm input[type="password"] {
+    color: rgba(0, 0, 0, 0.600);
+    font-size: 2.5vh;
+    font-weight: 400;
+    font-family: "Roboto", sans-serif;
+    border: none;
+    outline: none;
+    width: 50vh;
 }
 
 .Icons{

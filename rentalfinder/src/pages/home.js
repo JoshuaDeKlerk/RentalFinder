@@ -4,8 +4,8 @@ import SignIn from './SignIn';
 
 function Home() {
     return (
-      // <SignIn />
       <SignIn />
+      // <SignUp />
     );
   }
   
