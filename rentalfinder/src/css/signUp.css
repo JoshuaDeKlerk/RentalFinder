@@ -119,6 +119,41 @@ button:hover {
     background-color: #0056b3;
 }
 
+
+.LoginTitle{
+    text-align: center;
+    color: black;
+    font-size: 6vh;
+    font-weight: 700;
+    font-family: "Roboto", sans-serif;
+}
+
+.LoginSubtitle{
+    text-align: center;
+    color: rgba(0, 0, 0, 0.600);
+    font-size: 2.5vh;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+}
+
+.LoginSocials{
+    display: flex;
+    gap: 3vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.socials{
+    width: 8vh;
+}
+
+.LoginSeparator{
+    text-align: center;
+    color: rgba(0, 0, 0, 0.600);
+    font-size: 2.5vh;
+    font-weight: 400;
+    font-family: "Roboto", sans-serif;
+}
   
 
 

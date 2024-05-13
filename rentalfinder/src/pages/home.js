@@ -1,11 +1,11 @@
 import React from "react";
-import SignIn from './SignIn';
-// import SignUp from './signup';
+// import SignIn from './signin';
+import SignUp from './signup';
 
 function Home() {
     return (
-      <SignIn />
-      // <SignUp />
+      // <SignIn />
+      <SignUp />
     );
   }
   

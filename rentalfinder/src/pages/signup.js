@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import '../css/signUp.css';
 import Logo from "../assets/logo/LogoWhite.svg";
+import Google from "../assets/logo/Google.svg";
+import Facebook from "../assets/logo/Facebook.svg";
+import Email from "../assets/signin/Email.svg";
+import Password from "../assets/signin/Password.svg";
 
 function SignUp() {
   const [showPassword, setShowPassword] = useState(false);
@@ -26,6 +30,25 @@ function SignUp() {
         </div>
       </div>
       <div className='FormContainer'>
+      <div className='LogInText'>
+                    <div className='LoginTitle'>
+                        Login to Your Account
+                    </div>
+                    <div className='LoginSubtitle'>
+                        Login using social networks
+                    </div>
+                    <div className='LoginSocials'>
+                        <div className='socials'>
+                            <img src={Google} alt="Google" style={{ width: '100%' }} />
+                        </div>
+                        <div className='socials'>
+                            <img src={Facebook} alt="Facebook" style={{ width: '100%' }} />
+                        </div>
+                    </div>
+                    <div className='LoginSeparator'>
+                        OR
+                    </div>
+                </div>
         <form id="signin-form">
           <div className="form-group">
             <label htmlFor="username"><i className="fa fa-user"></i> Username</label>
