@@ -8,6 +8,31 @@ import Password from "../assets/signup/Password.svg";
 import Username from "../assets/signup/Username.svg";
 
 function SignUp() {
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+
+  const handleSignUp = () => {
+    if (password !== confirmPassword) {
+      alert("Passwords do not match");
+      return;
+    }
+
+    const userData = {
+      username,
+      email,
+      password,
+    };
+
+    localStorage.setItem('userData', JSON.stringify(userData));
+    alert('Thank you signing Up');
+
+    setUsername('');
+    setEmail('');
+    setPassword('');
+    setConfirmPassword('');
+  };
 
   return (
     <div className='SignUpContainer'>
@@ -26,70 +51,87 @@ function SignUp() {
         </div>
       </div>
       <div className='FormContainer'>
-      <div className='LogInText'>
-                    <div className='LoginTitle'>
-                        Login to Your Account
-                    </div>
-                    <div className='LoginSubtitle'>
-                        Login using social networks
-                    </div>
-                    <div className='LoginSocials'>
-                        <div className='socials'>
-                            <img src={Google} alt="Google" style={{ width: '100%' }} />
-                        </div>
-                        <div className='socials'>
-                            <img src={Facebook} alt="Facebook" style={{ width: '100%' }} />
-                        </div>
-                    </div>
-                    <div className='LoginSeparator'>
-                        OR
-                    </div>
-                </div>
-                <div className='LogInForm'>
-                    <div className='EmailForm'>
-                        <div className='InputEmail'>
-                            <input type="email" placeholder="Username" />
-                        </div>
-                        <div className='Icons'>
-                            <img src={Username} alt="Username" style={{ width: '100%' }} />
-                        </div>
-                    </div>
-                    <div className='EmailForm'>
-                        <div className='InputEmail'>
-                            <input type="email" placeholder="Email" />
-                        </div>
-                        <div className='Icons'>
-                            <img src={Email} alt="Email" style={{ width: '100%' }} />
-                        </div>
-                    </div>
-                    <div className='PasswordForm'>
-                        <div className='InputPassword'>
-                            <input type="password" placeholder="Confirm Password" />
-                        </div>
-                        <div className='Icons'>
-                            <img src={Password} alt="Password" style={{ width: '100%' }} />
-                        </div>
-                    </div>
-                    <div className='PasswordForm'>
-                        <div className='InputPassword'>
-                            <input type="password" placeholder="Password" />
-                        </div>
-                        <div className='Icons'>
-                            <img src={Password} alt="Password" style={{ width: '100%' }} />
-                        </div>
-                    </div>
-                </div>
-          
-                <div className='SignUpButtonContainer'>
-                    <div className='SignUpButton'>
-                        Sign Up
-                    </div>
-                </div>
-
+        <div className='LogInText'>
+          <div className='LoginTitle'>
+            Login to Your Account
+          </div>
+          <div className='LoginSubtitle'>
+            Login using social networks
+          </div>
+          <div className='LoginSocials'>
+            <div className='socials'>
+              <img src={Google} alt="Google" style={{ width: '100%' }} />
+            </div>
+            <div className='socials'>
+              <img src={Facebook} alt="Facebook" style={{ width: '100%' }} />
+            </div>
+          </div>
+          <div className='LoginSeparator'>
+            OR
+          </div>
+        </div>
+        <div className='LogInForm'>
+          <div className='EmailForm'>
+            <div className='InputEmail'>
+              <input
+                type="text"
+                placeholder="Username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+            </div>
+            <div className='Icons'>
+              <img src={Username} alt="Username" style={{ width: '100%' }} />
+            </div>
+          </div>
+          <div className='EmailForm'>
+            <div className='InputEmail'>
+              <input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div className='Icons'>
+              <img src={Email} alt="Email" style={{ width: '100%' }} />
+            </div>
+          </div>
+          <div className='PasswordForm'>
+            <div className='InputPassword'>
+              <input
+                type="password"
+                placeholder="Confirm Password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              />
+            </div>
+            <div className='Icons'>
+              <img src={Password} alt="Password" style={{ width: '100%' }} />
+            </div>
+          </div>
+          <div className='PasswordForm'>
+            <div className='InputPassword'>
+              <input
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
+            <div className='Icons'>
+              <img src={Password} alt="Password" style={{ width: '100%' }} />
+            </div>
+          </div>
+        </div>
+        <div className='SignUpButtonContainer'>
+          <div className='SignUpButton' onClick={handleSignUp}>
+            Sign Up
+          </div>
+        </div>
       </div>
     </div>
   );
 }
 
 export default SignUp;
-
