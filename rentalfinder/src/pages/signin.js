@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom'; 
+// import { useHistory } from 'react-router-dom'; 
 import '../css/signIn.css';
 import Logo from "../assets/logo/LogoWhite.svg";
 import Google from "../assets/logo/Google.svg";
@@ -10,14 +10,15 @@ import PasswordIcon from "../assets/signin/Password.svg";
 function SignIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const history = useHistory(); 
+  // const history = useHistory(); 
 
   const handleSignIn = () => {
     const userData = JSON.parse(localStorage.getItem('userData')); 
 
     if (userData && userData.email === email && userData.password === password) {
       
-      history.push('/home'); 
+      alert('Well Done')
+
     } else {
       alert('Username or password is incorrect. Please try again.'); 
     }

@@ -31,6 +31,7 @@
 }
 
 /* signIn.css */
+.LogInForm input[type="text"],
 .LogInForm input[type="email"],
 .LogInForm input[type="password"] {
     color: rgba(0, 0, 0, 0.600);
@@ -97,6 +98,7 @@ h1 {
     font-family: "Roboto", sans-serif;
     border-bottom: 3px solid white;
     color: white;
+    text-align: center;
 }
 
 .signinblock {
