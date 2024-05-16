@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../css/signUp.css';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import Logo from "../assets/logo/LogoWhite.svg";
 import Google from "../assets/logo/Google.svg";
 import Facebook from "../assets/logo/Facebook.svg";
@@ -8,26 +9,29 @@ import Email from "../assets/signup/Email.svg";
 import Password from "../assets/signup/Password.svg";
 import Username from "../assets/signup/Username.svg";
 
+
 function SignUp() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  const handleSignUp = () => {
+  const handleSignUp = async (event) => {
+    console.log('Sign Up button clicked!');
+    try {
+      const response = await axios.post('https://localhost:5000/api/users/register', {
+        username,
+        email,
+        password,
+      });
+      console.log('User created successfully:', response.data);
+    } catch (error) {
+      console.error('Error creating user:', error);
+    }
     if (password !== confirmPassword) {
       alert("Passwords do not match");
       return;
     }
-
-    const userData = {
-      username,
-      email,
-      password,
-    };
-
-    localStorage.setItem('userData', JSON.stringify(userData));
-    alert('Thank you signing Up');
 
     setUsername('');
     setEmail('');
