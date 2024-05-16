@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../css/signUp.css';
+import { Link } from 'react-router-dom';
 import Logo from "../assets/logo/LogoWhite.svg";
 import Google from "../assets/logo/Google.svg";
 import Facebook from "../assets/logo/Facebook.svg";
@@ -47,7 +48,11 @@ function SignUp() {
           <div className='signinblock'>
             <p>Already have an account?</p>
           </div>
-          <button className='buttonSignIn'>Log In</button>
+          <Link to="/signin">
+            <p>
+              <button className='buttonSignIn'>Log In</button>
+            </p>
+          </Link>
         </div>
       </div>
       <div className='FormContainer'>
