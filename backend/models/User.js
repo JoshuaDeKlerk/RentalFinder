@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
-const Userschema = new mongoose.Schema({
+// Define the user schema
+const UserSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -16,13 +17,5 @@ const Userschema = new mongoose.Schema({
     },
 });
 
-Router.get('/', async (req, res) =>{
-    try{
-        const users = await Userschema.find();
-        res.status(200).json(users);
-    } catch (err) {
-        res.status(400).json({ error: err.message });
-    }
-})
-
+// Define and export the user model
 module.exports = mongoose.model('User', UserSchema);

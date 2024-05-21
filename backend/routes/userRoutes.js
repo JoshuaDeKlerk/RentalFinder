@@ -2,11 +2,10 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
 
-
-router.post('/register', async (req, res) =>{
+router.post('/register', async (req, res) => {
     const { name, email, password } = req.body;
 
-    try{
+    try {
         const user = new User({ name, email, password });
         await user.save();
         res.status(201).json(user);
@@ -14,3 +13,5 @@ router.post('/register', async (req, res) =>{
         res.status(400).json({ error: err.message });
     }
 });
+
+module.exports = router;
