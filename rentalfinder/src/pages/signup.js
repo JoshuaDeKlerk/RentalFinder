@@ -18,14 +18,14 @@ function SignUp() {
   const handleSignUp = async (event) => {
     console.log('Sign Up button clicked!');
     try {
-      const response = await axios.post('https://localhost:5000/api/users/register', {
-        username,
-        email,
-        password,
-      });
-      console.log('User created successfully:', response.data);
+        const response = await axios.post('http://localhost:5000/api/users/register', {
+            username,
+            email,
+            password,
+        });
+        console.log('User created successfully:', response.data);
     } catch (error) {
-      console.error('Error creating user:', error);
+        console.error('Error creating user:', error);
       if (error.response && error.response.status === 500 && error.response.data.code === 'ERR_SSL_PROTOCOL_ERROR') {
         // Handle SSL protocol error
         console.error('SSL Protocol Error:', error);

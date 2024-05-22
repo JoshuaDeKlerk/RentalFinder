@@ -12,11 +12,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Search />} />
-        <Route path="/favorites" element={<Favorites />} /> {/* Corrected path */}
-        <Route path="/booking" element={<Booking />} /> {/* Corrected path */}
+        <Route path="/favorites" element={<Favorites />} />
+        <Route path="/booking" element={<Booking />} />
       </Routes>
     </Router>
   );
 }
 
 export default App;
+
