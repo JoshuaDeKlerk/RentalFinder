@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../css/signUp.css';
 import { Link } from 'react-router-dom';
+import axios from 'axios'; // Import Axios
 import Logo from "../assets/logo/LogoWhite.svg";
 import Google from "../assets/logo/Google.svg";
 import Facebook from "../assets/logo/Facebook.svg";
@@ -14,20 +15,27 @@ function SignUp() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  const handleSignUp = () => {
+  const handleSignUp = async (event) => {
+    console.log('Sign Up button clicked!');
+    try {
+        const response = await axios.post('http://localhost:5000/api/users/register', {
+            username,
+            email,
+            password,
+        });
+        console.log('User created successfully:', response.data);
+    } catch (error) {
+        console.error('Error creating user:', error);
+      if (error.response && error.response.status === 500 && error.response.data.code === 'ERR_SSL_PROTOCOL_ERROR') {
+        // Handle SSL protocol error
+        console.error('SSL Protocol Error:', error);
+        // You may want to display an error message to the user
+      }
+    }
     if (password !== confirmPassword) {
       alert("Passwords do not match");
       return;
     }
-
-    const userData = {
-      username,
-      email,
-      password,
-    };
-
-    localStorage.setItem('userData', JSON.stringify(userData));
-    alert('Thank you signing Up');
 
     setUsername('');
     setEmail('');
@@ -140,3 +148,4 @@ function SignUp() {
 }
 
 export default SignUp;
+
