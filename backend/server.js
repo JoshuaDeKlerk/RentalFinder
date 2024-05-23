@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import cors from 'cors';
 import userRoutes from './routes/userRoutes.js'; // Make sure the path is correct
 
 
@@ -9,7 +10,10 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 6000;
- 
+
+app.use(cors({
+    origin: 'http://localhost:3000' // Replace with your frontend's URL
+}));
 
 app.use(express.json());
 
