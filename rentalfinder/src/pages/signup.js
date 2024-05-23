@@ -17,24 +17,21 @@ function SignUp() {
 
   const handleSignUp = async (event) => {
     console.log('Sign Up button clicked!');
-    try {
-        const response = await axios.post('http://localhost:5000/api/users/register', {
-            username,
-            email,
-            password,
-        });
-        console.log('User created successfully:', response.data);
-    } catch (error) {
-        console.error('Error creating user:', error);
-      if (error.response && error.response.status === 500 && error.response.data.code === 'ERR_SSL_PROTOCOL_ERROR') {
-        // Handle SSL protocol error
-        console.error('SSL Protocol Error:', error);
-        // You may want to display an error message to the user
-      }
-    }
     if (password !== confirmPassword) {
       alert("Passwords do not match");
       return;
+    }
+    try {
+      const response = await axios.post('http://localhost:5000/api/users/register', {
+        username,
+        email,
+        password,
+      }, {
+        timeout: 5000
+      });
+      console.log('User created successfully:', response.data);
+    } catch (error) {
+      console.error('Error creating user:', error);
     }
 
     setUsername('');
@@ -148,4 +145,5 @@ function SignUp() {
 }
 
 export default SignUp;
+
 

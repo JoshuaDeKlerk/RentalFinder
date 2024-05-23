@@ -17,4 +17,4 @@ const UserSchema = new Schema({
     },
 });
 
-module.exports = model('UnderAgeUser', UserSchema);
+module.exports = model('UnderAgeUser', UserSchema); 
