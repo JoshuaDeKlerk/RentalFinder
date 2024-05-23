@@ -18,7 +18,6 @@ function SignIn() {
     if (userData && userData.email === email && userData.password === password) {
       
       alert('Well Done')
-
     } else {
       alert('Username or password is incorrect. Please try again.'); 
     }
