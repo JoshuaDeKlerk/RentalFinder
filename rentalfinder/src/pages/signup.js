@@ -23,7 +23,7 @@ function SignUp() {
       return;
     }
     try {
-      const response = await axios.post('http://localhost:6000/api/users/register', {
+      const response = await axios.post('http://localhost:6000/', {
         username,
         email,
         password,
