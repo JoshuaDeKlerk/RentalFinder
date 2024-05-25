@@ -16,8 +16,8 @@ function App() {
 
   return (
     <div className='App' data-theme={isDark ? "dark" : "light"}>
-      <NavBar isDark={isDark} setIsDark={setIsDark} />
       <Router>
+        <NavBar isDark={isDark} setIsDark={setIsDark} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search />} />

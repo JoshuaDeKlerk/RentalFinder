@@ -105,25 +105,44 @@
     gap: 1vw;
 }
 
+.NavBarCenter .active h2 {
+    border-bottom: 0.3vh solid var(--svg-fill-color); 
+    display: block;
+}
+
+.CenterText{
+    display: flex;
+    height: 100%;
+    gap: 1vh;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+}
+
 .CenterText h2{
     font-size: 2.5vh;
     font-weight: 500;
     color: var(--primary-text-color);
 }
 
+
 .CenterIcon{
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
-    width: 2vh;
+    width: 3vh;
     align-items: center;
+    position: relative;
 }
 
 .CenterIcon svg{
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0;
+    margin: 0;
+    position: relative;
 }
 
 .CenterIcon svg path {
