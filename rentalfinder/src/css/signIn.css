@@ -13,7 +13,7 @@ body{
 .SignInContainer{
     height: 100vh;
     width: 100%;
-    background-color: #E9E9E9;
+    background-color: var(--background-color);
     display: flex;
 }
 
@@ -32,46 +32,47 @@ body{
     height: 100%;
 }
 
-.LoginTitle{
+.LoginTitleCont{
     text-align: center;
-    color: black;
+    color: var(--primary-text-color);
     font-size: 6vh;
     font-weight: 700;
     font-family: "Roboto", sans-serif;
     padding-bottom: 2vh;
 }
 
-.LoginSubtitle{
+.LoginSubtitleCont{
     text-align: center;
-    color: rgba(0, 0, 0, 0.600);
+    color: var(--primary-text-color-fade);
     font-size: 2.5vh;
     font-weight: 500;
     font-family: "Roboto", sans-serif;
     padding-bottom: 3vh;
 }
 
-.LoginSocials{
+.LoginSocialsCont{
     display: flex;
     gap: 3vh;
     align-items: center;
     justify-content: center;
     padding-bottom: 2vh;
+    border: none;
 }
 
 .socials{
     width: 10vh;
 }
 
-.LoginSeparator{
+.LoginSeparatorCont{
     text-align: center;
-    color: rgba(0, 0, 0, 0.600);
+    color: var(--primary-text-color-fade);
     font-size: 2.5vh;
     font-weight: 400;
     font-family: "Roboto", sans-serif;
     padding-bottom: 2vh;
 }
 
-.LogInForm{
+.LogInFormCont{
     width: 100%;
     display: flex;
     align-items: center;
@@ -82,24 +83,25 @@ body{
 }
 
 /* signIn.css */
-.LogInForm input[type="email"],
-.LogInForm input[type="password"] {
-    color: rgba(0, 0, 0, 0.600);
+.LogInFormCont input[type="email"],
+.LogInFormCont input[type="password"] {
+    color: var(--primary-text-color-fade);
     font-size: 2.5vh;
     font-weight: 400;
     font-family: "Roboto", sans-serif;
     border: none;
     outline: none;
     width: 50vh;
+    background: none;
 }
 
 .Icons{
     width: 4vh;
 }
 
-.EmailForm{
+.EmailFormCont{
     width: 50%;
-    background-color: white;
+    background-color: var(--secondary-background-color);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -108,9 +110,9 @@ body{
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.PasswordForm{
+.PasswordFormCont{
     width: 50%;
-    background-color: white;
+    background-color: var(--secondary-background-color);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -119,10 +121,10 @@ body{
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.LoginButton{
+.LoginButtonCont{
     padding: 3vh 15vh;
-    background-color: #4277FF;
-    color: white;
+    background-color: var(--foreground-color);
+    color: var( --secondary-text-color);
     font-size: 2.5vh;
     font-weight: 600;
     border-radius: 50px;
@@ -131,7 +133,7 @@ body{
 
 /* Sign Up Container */
 
-.SignUpContainer{
+.SignUpContainer1{
     width: 35%;
     height: 100%;
     background-image: url(../assets/signin/SignInBackground.png);
@@ -162,17 +164,21 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    border-bottom: 0.2vh solid #FFF;
+    border-bottom: 0.2vh solid var(--secondary-background-color);
     padding-bottom: 1vh;
 }
 
-.Logo{
+.LogoCont{
     padding-right: 3vh;
     width: 25vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 3vh;
+    padding-bottom: 0;
+}
+
+.LogoCont svg path{
+    fill: var(--background-color);
 }
 
 .LogoTitle{
@@ -181,7 +187,7 @@ body{
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #E9E9E9;
+    color: var(--secondary-text-color);
     font-size: 8vh;
     font-weight: 700;
     font-family: "Roboto", sans-serif;
@@ -202,7 +208,7 @@ body{
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #E9E9E9;
+    color: var(--secondary-text-color);
     font-size: 6vh;
     font-weight: 700;
     font-family: "Roboto", sans-serif;
@@ -215,7 +221,7 @@ body{
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #E9E9E9;
+    color: var(--secondary-text-color);
     font-size: 3vh;
     font-weight: 500;
     font-family: "Roboto", sans-serif;
@@ -229,9 +235,10 @@ body{
     justify-content: center;
 }
 
-.SignUpButton{
+.SignUpButtonCont{
     padding: 3vh 15vh;
-    background-color: white;
+    background-color: var(--secondary-background-color);
+    color: var(--primary-text-color);
     font-size: 2.5vh;
     font-weight: 600;
     border-radius: 50px;
