@@ -5,6 +5,8 @@ import Home from './pages/home';
 import Search from './pages/search';
 import Favorites from './pages/favorites';
 import Booking from './pages/booking';
+import SignIn from './pages/signin'; // Correct import
+import SignUp from './pages/signup'; // Correct import
 
 function App() {
   return (
@@ -14,10 +16,13 @@ function App() {
         <Route path="/search" element={<Search />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/booking" element={<Booking />} />
+        <Route path="/signin" element={<SignIn />} /> {/* Correct path */}
+        <Route path="/signup" element={<SignUp />} /> {/* Correct path */}
       </Routes>
     </Router>
   );
 }
 
 export default App;
+
 

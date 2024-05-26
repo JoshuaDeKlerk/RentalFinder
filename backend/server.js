@@ -1,34 +1,36 @@
-import express from 'express';
-import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import userRoutes from './routes/userRoutes.js'; // Make sure the path is correct
+dotenv.config();  // Make sure this is at the very top before other imports
 
+import express from 'express';
+import cors from 'cors';
+import connectDB from './db/db.js';  // Note the .js extension
 
-dotenv.config();
+import userRoutes from './routes/userRoutes.js';  // Note the .js extension
 
+const corsOptions = {
+  origin: 'http://localhost:3000', // or your specific allowed domain
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
 
 const app = express();
 const PORT = process.env.PORT || 5000;
- 
 
-app.use(express.json());
+// Connect to MongoDB
+connectDB();
 
-app.get('/', (req, res) => {
-    res.send('Hello World');
-});
+// Middleware to parse JSON
+app.use(express.json()); // For parsing application/json
 
-// MongoDB connection
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log('MongoDB connected'))
-    .catch(err => console.error(err));
+// Apply CORS middleware globally if needed
+app.use(cors(corsOptions));
 
-// Import and use user routes
-app.use('/api/users', userRoutes);
-
+app.use('/users', userRoutes);
 
 app.listen(PORT, () => {
-    console.log(`Server is running on PORT ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
+
+
 
 
 

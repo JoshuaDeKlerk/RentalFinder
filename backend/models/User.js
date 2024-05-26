@@ -6,19 +6,27 @@ const UserSchema = new Schema({
     username: {
         type: String,
         required: true,
-        unique: true,
     },
     email: {
         type: String,
         required: true,
-        unique: true,
     },
     password: {
         type: String,
         required: true,
     },
-});
+    idOrDriversLicense: {
+        type: String,
+        required: true,
+    },
+    age: {
+        type: Number,
+        required: true,
+    },
+}, { collection: 'users' });
 
 const User = model('User', UserSchema);
 export default User;
+
+
 
