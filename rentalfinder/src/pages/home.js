@@ -1,14 +1,19 @@
-import React from "react";
-// import SignIn from './signin';
-import SignUp from './signup';
-//import FavoritePage from './favorites'; // Import FavoritePage component
+import React from 'react';
+import { Link } from 'react-router-dom';
+import SignUp from './signup'; // Correct import path for SignUp component
 
 function Home() {
-    return (
-      // <SignIn />
-      <SignUp />
-      //<FavoritePage />
-    );
-  }
-  
-  export default Home;
+  return (
+    <div>
+      <h1>Welcome to the Home Page</h1>
+      <Link to="/signup">
+        <button>Go to Sign Up</button>
+      </Link>
+      
+    </div>
+  );
+}
+
+export default Home;
+
+

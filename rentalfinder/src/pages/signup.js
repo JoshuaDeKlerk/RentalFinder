@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
 import '../css/signUp.css';
-import { Link } from 'react-router-dom';
-import axios from 'axios'; // Import Axios
 import Logo from "../assets/logo/LogoWhite.svg";
 import Google from "../assets/logo/Google.svg";
 import Facebook from "../assets/logo/Facebook.svg";
@@ -9,36 +12,33 @@ import Email from "../assets/signup/Email.svg";
 import Password from "../assets/signup/Password.svg";
 import Username from "../assets/signup/Username.svg";
 
-function SignUp() {
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+const schema = yup.object().shape({
+  username: yup.string().required("Username is required"),
+  email: yup.string().email("Invalid email format").required("Email is required"),
+  password: yup.string().min(6, "Password must be at least 6 characters").required("Password is required"),
+  confirmPassword: yup.string().oneOf([yup.ref('password'), null], "Passwords must match").required("Confirm Password is required"),
+  idOrDriversLicense: yup.string().required("ID or Driver’s License is required"),
+  age: yup.number().min(18, "You must be at least 18").required("Age is required"),
+});
 
-  const handleSignUp = async (event) => {
-    event.preventDefault();
-    console.log('Sign Up button clicked!');
-    if (password !== confirmPassword) {
-      alert("Passwords do not match");
-      return;
-    }
+function SignUp() {
+  const { register, handleSubmit, formState: { errors } } = useForm({
+    resolver: yupResolver(schema),
+  });
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
+  const handleSignUp = async (data) => {
+    setLoading(true);
     try {
-      const response = await axios.post('http://localhost:6000/api/users/register', {
-        username,
-        email,
-        password,
-      }, {
-        timeout: 5000
-      });
+      const response = await axios.post('http://localhost:5000/users/register', data, { timeout: 5000 });
       console.log('User created successfully:', response.data);
+      setLoading(false);
+      navigate('/signin');
     } catch (error) {
       console.error('Error creating user:', error);
+      setLoading(false);
     }
-
-    setUsername('');
-    setEmail('');
-    setPassword('');
-    setConfirmPassword('');
   };
 
   return (
@@ -81,70 +81,97 @@ function SignUp() {
             OR
           </div>
         </div>
-        <div className='LogInForm'>
-          <div className='EmailForm'>
-            <div className='InputEmail'>
-              <input
-                type="text"
-                placeholder="Username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-              />
+        <form onSubmit={handleSubmit(handleSignUp)}>
+          <div className='LogInForm'>
+            <div className='EmailForm'>
+              <div className='InputEmail'>
+                <input
+                  type="text"
+                  placeholder="Username"
+                  {...register('username')}
+                />
+              </div>
+              <p>{errors.username?.message}</p>
+              <div className='Icons'>
+                <img src={Username} alt="Username" style={{ width: '100%' }} />
+              </div>
             </div>
-            <div className='Icons'>
-              <img src={Username} alt="Username" style={{ width: '100%' }} />
+            <div className='EmailForm'>
+              <div className='InputEmail'>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  {...register('email')}
+                />
+              </div>
+              <p>{errors.email?.message}</p>
+              <div className='Icons'>
+                <img src={Email} alt="Email" style={{ width: '100%' }} />
+              </div>
+            </div>
+            <div className='PasswordForm'>
+              <div className='InputPassword'>
+                <input
+                  type="password"
+                  placeholder="Password"
+                  {...register('password')}
+                />
+              </div>
+              <p>{errors.password?.message}</p>
+              <div className='Icons'>
+                <img src={Password} alt="Password" style={{ width: '100%' }} />
+              </div>
+            </div>
+            <div className='PasswordForm'>
+              <div className='InputPassword'>
+                <input
+                  type="password"
+                  placeholder="Confirm Password"
+                  {...register('confirmPassword')}
+                />
+              </div>
+              <p>{errors.confirmPassword?.message}</p>
+              <div className='Icons'>
+                <img src={Password} alt="Password" style={{ width: '100%' }} />
+              </div>
+            </div>
+            <div className='EmailForm'>
+              <div className='InputEmail'>
+                <input
+                  type="text"
+                  placeholder="ID or Driver’s License"
+                  {...register('idOrDriversLicense')}
+                />
+              </div>
+              <p>{errors.idOrDriversLicense?.message}</p>
+            </div>
+            <div className='EmailForm'>
+              <div className='InputEmail'>
+                <input
+                  type="number"
+                  placeholder="Age"
+                  {...register('age')}
+                />
+              </div>
+              <p>{errors.age?.message}</p>
             </div>
           </div>
-          <div className='EmailForm'>
-            <div className='InputEmail'>
-              <input
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <div className='Icons'>
-              <img src={Email} alt="Email" style={{ width: '100%' }} />
-            </div>
+          <div className='SignUpButtonContainer'>
+            <button className='SignUpButton' type="submit" disabled={loading}>
+              {loading ? 'Signing Up...' : 'Sign Up'}
+            </button>
           </div>
-          <div className='PasswordForm'>
-            <div className='InputPassword'>
-              <input
-                type="password"
-                placeholder="Confirm Password"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-              />
-            </div>
-            <div className='Icons'>
-              <img src={Password} alt="Password" style={{ width: '100%' }} />
-            </div>
-          </div>
-          <div className='PasswordForm'>
-            <div className='InputPassword'>
-              <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
-            <div className='Icons'>
-              <img src={Password} alt="Password" style={{ width: '100%' }} />
-            </div>
-          </div>
-        </div>
-        <div className='SignUpButtonContainer'>
-          <div className='SignUpButton' onClick={handleSignUp}>
-            Sign Up
-          </div>
-        </div>
+        </form>
       </div>
     </div>
   );
 }
 
 export default SignUp;
+
+
+
+
+
 
 
