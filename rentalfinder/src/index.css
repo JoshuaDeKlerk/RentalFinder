@@ -1,9 +1,13 @@
+/* index.css */
+
+/* Apply a reset to all elements */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Define CSS variables for light theme (default) */
 :root {
   --background-color: rgba(233, 233, 233, 1);
   --secondary-background-color: rgba(255, 255, 255, 1);
@@ -16,6 +20,7 @@
   --toggle-fg: #ffd000;
 }
 
+/* Define CSS variables for dark theme */
 [data-theme="dark"] {
   --background-color: rgba(34, 40, 49, 1);
   --secondary-background-color: rgba(57, 62, 70, 1);
@@ -26,4 +31,11 @@
   --svg-fill-color: rgba(233, 233, 233, 1); 
   --toggle-bg: #283452;
   --toggle-fg: #4277FF;
+}
+
+/* Other global styles */
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--background-color);
+  color: var(--primary-text-color);
 }

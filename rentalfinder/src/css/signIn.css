@@ -1,16 +1,17 @@
+/* General styles */
 p, h1, h2, h3, h4, h5, h6 {
     margin: 0;
     font-family: "Roboto", sans-serif;
     font-style: normal;
 }
 
-body{
+body {
     margin: 0;
     font-family: "Roboto", sans-serif;
     font-style: normal;
 }
 
-.SignInContainer{
+.SignInContainer {
     height: 100vh;
     width: 100%;
     background-color: var(--background-color);
@@ -18,13 +19,12 @@ body{
 }
 
 /* Log In Container */
-
-.LogInContainer{
+.LogInContainer {
     width: 65%;
     height: 100%;
 }
 
-.LogInNavigatorContainer{
+.LogInNavigatorContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,7 +32,7 @@ body{
     height: 100%;
 }
 
-.LoginTitleCont{
+.LoginTitleCont {
     text-align: center;
     color: var(--primary-text-color);
     font-size: 6vh;
@@ -41,7 +41,7 @@ body{
     padding-bottom: 2vh;
 }
 
-.LoginSubtitleCont{
+.LoginSubtitleCont {
     text-align: center;
     color: var(--primary-text-color-fade);
     font-size: 2.5vh;
@@ -50,20 +50,19 @@ body{
     padding-bottom: 3vh;
 }
 
-.LoginSocialsCont{
+.LoginSocialsCont {
     display: flex;
     gap: 3vh;
     align-items: center;
     justify-content: center;
     padding-bottom: 2vh;
-    border: none;
 }
 
-.socials{
+.socials {
     width: 10vh;
 }
 
-.LoginSeparatorCont{
+.LoginSeparatorCont {
     text-align: center;
     color: var(--primary-text-color-fade);
     font-size: 2.5vh;
@@ -72,7 +71,7 @@ body{
     padding-bottom: 2vh;
 }
 
-.LogInFormCont{
+.LogInFormCont {
     width: 100%;
     display: flex;
     align-items: center;
@@ -82,7 +81,7 @@ body{
     padding-bottom: 6vh;
 }
 
-/* signIn.css */
+/* Input styles */
 .LogInFormCont input[type="email"],
 .LogInFormCont input[type="password"] {
     color: var(--primary-text-color-fade);
@@ -95,11 +94,11 @@ body{
     background: none;
 }
 
-.Icons{
+.Icons {
     width: 4vh;
 }
 
-.EmailFormCont{
+.EmailFormCont {
     width: 50%;
     background-color: var(--secondary-background-color);
     display: flex;
@@ -110,7 +109,7 @@ body{
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.PasswordFormCont{
+.PasswordFormCont {
     width: 50%;
     background-color: var(--secondary-background-color);
     display: flex;
@@ -121,10 +120,11 @@ body{
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.LoginButtonCont{
+/* Button styles */
+.LoginButtonCont {
     padding: 3vh 15vh;
     background-color: var(--foreground-color);
-    color: var( --secondary-text-color);
+    color: var(--secondary-text-color);
     font-size: 2.5vh;
     font-weight: 600;
     border-radius: 50px;
@@ -132,8 +132,7 @@ body{
 }
 
 /* Sign Up Container */
-
-.SignUpContainer1{
+.SignUpContainer1 {
     width: 35%;
     height: 100%;
     background-image: url(../assets/signin/SignInBackground.png);
@@ -143,7 +142,7 @@ body{
     justify-content: center;
 }
 
-.SignUpNavigatorContainer{
+.SignUpNavigatorContainer {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -151,14 +150,14 @@ body{
     justify-content: center;
 }
 
-.LogoAndText{
+.LogoAndText {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.LogoAndName{
+.LogoAndName {
     width: 80%;
     display: flex;
     align-items: center;
@@ -168,7 +167,7 @@ body{
     padding-bottom: 1vh;
 }
 
-.LogoCont{
+.LogoCont {
     padding-right: 3vh;
     width: 25vh;
     display: flex;
@@ -177,11 +176,11 @@ body{
     padding-bottom: 0;
 }
 
-.LogoCont svg path{
+.LogoCont svg path {
     fill: var(--background-color);
 }
 
-.LogoTitle{
+.LogoTitle {
     width: 100%;
     display: flex;
     align-items: center;
@@ -193,7 +192,7 @@ body{
     font-family: "Roboto", sans-serif;
 }
 
-.Description{
+.Description {
     align-items: center;
     justify-content: center;
     display: flex;
@@ -202,7 +201,7 @@ body{
     padding-bottom: 5vh;
 }
 
-.DescriptionTitle{
+.DescriptionTitle {
     width: 100%;
     display: flex;
     align-items: center;
@@ -215,7 +214,7 @@ body{
     padding-bottom: 2vh;
 }
 
-.DescriptionText{
+.DescriptionText {
     width: 70%;
     display: flex;
     align-items: center;
@@ -225,17 +224,16 @@ body{
     font-size: 3vh;
     font-weight: 500;
     font-family: "Roboto", sans-serif;
-
 }
 
-.SignUpButtonContainer{
+.SignUpButtonContainer {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.SignUpButtonCont{
+.SignUpButtonCont {
     padding: 3vh 15vh;
     background-color: var(--secondary-background-color);
     color: var(--primary-text-color);
@@ -245,7 +243,9 @@ body{
     box-shadow: 0px 2.011px 4.022px 0px rgba(0, 0, 0, 0.10);
 }
 
+/* Error message style */
 p {
     color: red;
     font-size: 0.875rem;
 }
+
