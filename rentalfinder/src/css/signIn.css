@@ -56,6 +56,7 @@ body {
     align-items: center;
     justify-content: center;
     padding-bottom: 2vh;
+    border: none;
 }
 
 .socials {
@@ -90,8 +91,8 @@ body {
     font-family: "Roboto", sans-serif;
     border: none;
     outline: none;
-    width: 50vh;
-    background: none;
+    width: 24vw;
+    background: var(--secondary-background-color);
 }
 
 .Icons {
@@ -99,7 +100,7 @@ body {
 }
 
 .EmailFormCont {
-    width: 50%;
+    width: 40vw;
     background-color: var(--secondary-background-color);
     display: flex;
     align-items: center;
@@ -110,7 +111,7 @@ body {
 }
 
 .PasswordFormCont {
-    width: 50%;
+    width: 40vw;
     background-color: var(--secondary-background-color);
     display: flex;
     align-items: center;
@@ -121,8 +122,14 @@ body {
 }
 
 /* Button styles */
-.LoginButtonCont {
-    padding: 3vh 15vh;
+.LogInButtonContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.LoginButtonCont1 {
+    padding: 3% 15%;
     background-color: var(--foreground-color);
     color: var(--secondary-text-color);
     font-size: 2.5vh;

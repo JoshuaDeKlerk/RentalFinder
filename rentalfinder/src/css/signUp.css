@@ -40,7 +40,8 @@
     font-family: "Roboto", sans-serif;
     border: none;
     outline: none;
-    width: 50vh;
+    width: 80%;
+    background: none;
 }
 
 .Icons{

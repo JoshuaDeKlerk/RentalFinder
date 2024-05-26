@@ -16,8 +16,6 @@
   --secondary-text-color: rgba(233, 233, 233, 1);
   --primary-text-color-fade: rgba(34, 40, 49, 0.60);
   --svg-fill-color: rgba(34, 40, 49, 1); 
-  --toggle-bg: #f0eb9d;
-  --toggle-fg: #ffd000;
 }
 
 /* Define CSS variables for dark theme */
@@ -29,8 +27,6 @@
   --secondary-text-color: rgba(34, 40, 49, 1);
   --primary-text-color-fade: rgba(233, 233, 233, 0.6);
   --svg-fill-color: rgba(233, 233, 233, 1); 
-  --toggle-bg: #283452;
-  --toggle-fg: #4277FF;
 }
 
 /* Other global styles */
