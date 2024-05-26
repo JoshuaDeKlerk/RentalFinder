@@ -6,8 +6,8 @@ import SignIn from './signin'
 
 function Home() {
     return (
-      <SignIn />
-      
+      // <SignIn />
+      <SignUp />
       //<FavoritePage />
     );
   }

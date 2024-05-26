@@ -1,13 +1,29 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --background-color: rgba(233, 233, 233, 1);
+  --secondary-background-color: rgba(255, 255, 255, 1);
+  --foreground-color: rgba(66, 119, 255, 1);
+  --primary-text-color: rgba(34, 40, 49, 1);
+  --secondary-text-color: rgba(233, 233, 233, 1);
+  --primary-text-color-fade: rgba(34, 40, 49, 0.60);
+  --svg-fill-color: rgba(34, 40, 49, 1); 
+  --toggle-bg: #f0eb9d;
+  --toggle-fg: #ffd000;
+}
+
+[data-theme="dark"] {
+  --background-color: rgba(34, 40, 49, 1);
+  --secondary-background-color: rgba(57, 62, 70, 1);
+  --foreground-color: rgba(66, 119, 255, 1);
+  --primary-text-color: rgba(233, 233, 233, 1);
+  --secondary-text-color: rgba(34, 40, 49, 1);
+  --primary-text-color-fade: rgba(233, 233, 233, 0.6);
+  --svg-fill-color: rgba(233, 233, 233, 1); 
+  --toggle-bg: #283452;
+  --toggle-fg: #4277FF;
 }
