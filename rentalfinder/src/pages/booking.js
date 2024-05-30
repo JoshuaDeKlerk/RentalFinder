@@ -2,12 +2,21 @@ import React from "react";
 import "../css/booking.css";
 import Carousel from 'react-bootstrap/Carousel';
 import car from '../assets/images/car.svg';
+import car1 from '../assets/images/car1.svg';
+import car2 from '../assets/images/car2.svg';
 import carLogo from '../assets/images/carlogo.svg';
 import star from "../assets/images/star.svg";
 import heart from "../assets/images/heart.svg";
 import separator from '../assets/images/separator.svg';
 import Button from 'react-bootstrap/Button';
 import fuel from '../assets/images/fuel.svg'
+import speed from '../assets/images/speed.svg'
+import seat from '../assets/images/seat.svg'
+import engine from '../assets/images/engine.svg'
+import manual from '../assets/images/manual.svg'
+import aircon from '../assets/images/aircon.svg'
+
+
 function Booking() {
     return (
       <div>
@@ -35,14 +44,14 @@ function Booking() {
                     <Carousel.Item>
                         <img
                             className="car"
-                            src={car}
+                            src={car1}
                             alt="Second slide"
                         />
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
                             className="car"
-                            src={car}
+                            src={car2}
                             alt="Third slide"
                         />
                     </Carousel.Item>
@@ -65,7 +74,7 @@ function Booking() {
                       <div className="row">
                         <div className="col-4">
                           <div className="specifications-details-box">
-                          <img src={fuel} alt="Car logo" />
+                          <img src={fuel} alt="fuel" />
                           <div className="specifications-text">
                           <h4>Petrol</h4>
                           </div>
@@ -73,41 +82,42 @@ function Booking() {
                         </div>
                         <div className="col-4">
                           <div className="specifications-details-box">
-                          <img src={carLogo} alt="Car logo" />
+                          <img src={seat} alt="seat" />
                           <div className="specifications-text">
-                          <h4>petrol</h4>
+                          <h4>Two Seaters</h4>
                           </div>
                           </div>
                         </div>
                         <div className="col-4">
                           <div className="specifications-details-box">
-                          <img src={carLogo} alt="Car logo" />
+                          <img src={speed} alt="speed" />
                           <div className="specifications-text">
-                              <h4>petrol</h4>
+                              <h4>Top Speed</h4>
+                              <h6>320 km/h</h6>
                           </div>
                           </div>
                         </div>
                         <div className="col-4">
                           <div className="specifications-details-box">
-                          <img src={carLogo} alt="Car logo" />
+                          <img src={engine} alt="engine" />
                           <div className="specifications-text">
-                          <h4>Petrol</h4>
+                          <h4>5.2-liter V-10</h4>
                           </div>
                           </div>
                         </div>
                         <div className="col-4">
                           <div className="specifications-details-box">
-                          <img src={carLogo} alt="Car logo" />
+                          <img src={manual} alt="manual" />
                           <div className="specifications-text">
-                          <h4>petrol</h4>
+                          <h4>manual</h4>
                           </div>
                           </div>
                         </div>
                         <div className="col-4">
                           <div className="specifications-details-box">
-                          <img src={carLogo} alt="Car logo" />
+                          <img src={aircon} alt="aircon" />
                           <div className="specifications-text">
-                              <h4>petrol</h4>
+                              <h4>Aircon</h4>
                           </div>
                           </div>
                         </div>
