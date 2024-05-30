@@ -1,0 +1,101 @@
+.container {
+    position: relative;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.car-logo {
+    text-align: center;
+}
+
+.icon-right {
+    width: 120px; 
+    height: 60px;
+    margin-right: 50px;
+}
+
+.icon-left{
+    width: 120px; 
+    height: 70px;
+    margin-left: 50px;
+}
+
+
+.details-text {
+    text-align: center;
+}
+
+.booking {
+    width: 100%;
+    height: 49vh;
+}
+
+.details-text p {
+    font-weight: bold;
+    font-size: 45px;
+    color: black;
+}
+
+.car {
+    width: 100%;
+    height: 45vh;
+}
+
+.car-box{
+    width: 100%;
+    height: 10vh;
+    background: url('../assets/images/separator.svg');
+}
+
+.car-details-text h2{
+    color: white;
+    text-align: center;
+    padding-top: 25px;
+    margin-bottom: 60px;
+}
+
+.specifications-box{
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    width: 100%;
+    height: 59vh;
+}
+
+.specifications-details-box{ 
+    padding-top: 55px;
+    text-align: center;
+    margin: 45px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    width: 70%;
+    height: 20vh;
+    background-color: rgb(104, 104, 104);
+}
+
+.reviews-box{
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 100%;
+    height: 50vh;
+    background-color: grey;
+}
+
+.book-btn{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+}
+
+.specifications-text{
+    margin-top: 20px;
+    color: white;
+}
