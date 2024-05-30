@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SignUp from './signup'; // Correct import path for SignUp component
+import Booking from './booking';
 
 function Home() {
   return (
