@@ -1,6 +1,9 @@
-// const { Schema, model } = require('mongoose');
+// models/UnderAgeUser.js
+// import mongoose from 'mongoose';
 
-// const UserSchema = new Schema({
+// const { Schema, model } = mongoose;
+
+// const UnderAgeUserSchema = new Schema({
 //     username: {
 //         type: String,
 //         required: true,
@@ -17,4 +20,5 @@
 //     },
 // });
 
-// module.exports = model('UnderAgeUser', UserSchema); 
+// const UnderAgeUser = model('UnderAgeUser', UnderAgeUserSchema);
+// export default UnderAgeUser;

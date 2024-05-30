@@ -1,6 +1,9 @@
-// const { Schema, model } = require('mongoose');
+// models/AdminUser.js
+// import mongoose from 'mongoose';
 
-// const UserSchema = new Schema({
+// const { Schema, model } = mongoose;
+
+// const AdminUserSchema = new Schema({
 //     username: {
 //         type: String,
 //         required: true,
@@ -17,4 +20,5 @@
 //     },
 // });
 
-// module.exports = model('AdminUser', UserSchema);
+// const AdminUser = model('AdminUser', AdminUserSchema);
+// export default AdminUser;

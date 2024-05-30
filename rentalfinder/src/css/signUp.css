@@ -1,27 +1,72 @@
+/* src/css/signUp.css */
+
+/* General styles */
+p, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+}
+
 .SignUpContainer {
     height: 100vh;
     width: 100%;
-    background-color: #E9E9E9;
-    display: flex; /* Use flexbox to arrange items */
+    background-color: var(--background-color);
+    display: flex;
 }
 
-.LoginContainerButton {
-    width: 35%;
-    height: 100vh;
-    background-image: url(../assets/signup/SignUpBackground.png);
-    background-size: cover;
+/* Form Container */
+.FormContainer {
+    width: 65%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.FormContainer{
-    display: flex;
-    flex-direction: column;
-    background-color: #E9E9E9;
+.LogInText {
+    text-align: center;
 }
 
-.LogInForm{
+.LoginTitle {
+    color: var(--primary-text-color);
+    font-size: 6vh;
+    font-weight: 700;
+    padding-bottom: 2vh;
+}
+
+.LoginSubtitle {
+    color: var(--primary-text-color-fade);
+    font-size: 2.5vh;
+    font-weight: 500;
+    padding-bottom: 3vh;
+}
+
+.LoginSocials {
+    display: flex;
+    gap: 3vh;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 2vh;
+}
+
+.socials {
+    width: 10vh;
+}
+
+.LoginSeparator {
+    color: var(--primary-text-color-fade);
+    font-size: 2.5vh;
+    font-weight: 400;
+    padding-bottom: 2vh;
+}
+
+.LogInForm {
     width: 100%;
     display: flex;
     align-items: center;
@@ -31,26 +76,28 @@
     padding-bottom: 6vh;
 }
 
+/* Input styles */
 .LogInForm input[type="text"],
 .LogInForm input[type="email"],
-.LogInForm input[type="password"] {
-    color: rgba(0, 0, 0, 0.600);
+.LogInForm input[type="password"],
+.LogInForm input[type="number"] {
+    color: var(--primary-text-color-fade);
     font-size: 2.5vh;
     font-weight: 400;
-    font-family: "Roboto", sans-serif;
     border: none;
     outline: none;
-    width: 80%;
-    background: none;
+    width: 24vw;
+    background: var(--secondary-background-color);
 }
 
-.Icons{
+.Icons {
     width: 4vh;
 }
 
-.EmailForm{
-    width: 50%;
-    background-color: white;
+.EmailForm,
+.PasswordForm {
+    width: 40vw;
+    background-color: var(--secondary-background-color);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -59,144 +106,137 @@
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.PasswordForm{
-    width: 50%;
-    background-color: white;
+/* Button styles */
+.LogInButtonContainer {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 2.5vh 8vh;
-    border-radius: 50px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-}
-
-.FormContainer {
-    width: 65%;
-    height: 100vh;
-    display: flex;
     justify-content: center;
-    align-items: center;
 }
 
-.DetailsContainer {
+.LoginButtonCont1 {
+    padding: 3% 15%;
+    background-color: var(--foreground-color);
+    color: var(--secondary-text-color);
+    font-size: 2.5vh;
+    font-weight: 600;
+    border-radius: 50px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+/* Sign Up Container */
+.SignUpContainer1 {
+    width: 35%;
+    height: 100%;
+    background-image: url(../assets/signup/SignUpBackground.png);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.SignUpNavigatorContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.LogoAndText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.LogoAndName {
     width: 80%;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
+    border-bottom: 0.2vh solid var(--secondary-background-color);
+    padding-bottom: 1vh;
 }
 
-.logo2 {
-    width: 50%;
-    height: 100%;
-    background-position: center;
+.LogoCont {
+    padding-right: 3vh;
+    width: 25vh;
     display: flex;
     align-items: center;
-    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 0;
 }
 
-h1 {
-    font-size: 8vh;
-    font-family: "Roboto", sans-serif;
-    border-bottom: 3px solid white;
-    color: white;
-    text-align: center;
-}
-
-.signinblock {
+.LogoCont img {
     width: 100%;
 }
 
-p {
-    font-family: "Roboto", sans-serif;
-    font-size: x-large;
-    color: white;
+.LogoTitle {
+    width: 100%;
     display: flex;
+    align-items: center;
     justify-content: center;
-}
-
-.buttonSignIn {
-    padding: 3vh 15vh;
-    background-color: white;
-    font-size: 2.5vh;
-    font-weight: 600;
-    border-radius: 50px;
-    border: none;
-    box-shadow: 0px 2.011px 4.022px 0px rgba(0, 0, 0, 0.10);
-}
-
-.buttonSignIn:hover {
-    cursor: pointer;
-    background-color: transparent;
-    color: white;
-}
-
-.form-container {
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.LoginTitle{
     text-align: center;
-    color: black;
+    color: var(--secondary-text-color);
+    font-size: 8vh;
+    font-weight: 700;
+}
+
+.Description {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+.DescriptionTitle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--secondary-text-color);
     font-size: 6vh;
     font-weight: 700;
-    font-family: "Roboto", sans-serif;
     padding-bottom: 2vh;
 }
 
-.LoginSubtitle{
-    text-align: center;
-    color: rgba(0, 0, 0, 0.600);
-    font-size: 2.5vh;
-    font-weight: 500;
-    font-family: "Roboto", sans-serif;
-    padding-bottom: 2vh;
-}
-
-.LoginSocials{
+.DescriptionText {
+    width: 70%;
     display: flex;
-    gap: 3vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--secondary-text-color);
+    font-size: 3vh;
+    font-weight: 500;
+}
+
+.SignUpButtonContainer {
+    width: 100%;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.socials{
-    width: 8vh;
-}
-
-.LoginSeparator{
-    text-align: center;
-    color: rgba(0, 0, 0, 0.600);
-    font-size: 2.5vh;
-    font-weight: 400;
-    font-family: "Roboto", sans-serif;
-    padding-bottom: 2vh;
-}
-
-.SignUpButton{
+.SignUpButtonCont {
     padding: 3vh 15vh;
-    background-color: #4277FF;
-    color: white;
+    background-color: var(--secondary-background-color);
+    color: var(--primary-text-color);
     font-size: 2.5vh;
     font-weight: 600;
     border-radius: 50px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 2.011px 4.022px 0px rgba(0, 0, 0, 0.10);
 }
 
+/* Error message style */
 p {
     color: red;
     font-size: 0.875rem;
 }
-
   
 
 
