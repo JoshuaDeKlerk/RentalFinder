@@ -1,3 +1,4 @@
+// src/components/darkmode.js
 import './componentCSS/darkMode.css';
 
 export const DarkMode = ({ handleChange, isChecked}) => {

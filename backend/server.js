@@ -1,38 +1,42 @@
-import dotenv from 'dotenv';
-dotenv.config();  // Make sure this is at the very top before other imports
-
 import express from 'express';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
 import cors from 'cors';
-import connectDB from './db/db.js';  // Note the .js extension
+import userRoutes from './routes/userRoutes.js';
+import productRoutes from './routes/productRoutes.js';
+import bookingRoutes from './routes/bookingRoutes.js';
+import authRoutes from './routes/authRoutes.js';
+import favoriteRoutes from './routes/favoriteRoutes.js';
+import reviewRoutes from './routes/reviewRoutes.js';
 
-import userRoutes from './routes/userRoutes.js';  // Note the .js extension
-
-const corsOptions = {
-  origin: 'http://localhost:3000', // or your specific allowed domain
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-};
+dotenv.config();
 
 const app = express();
+app.use(cors());
+app.use(express.json());
+
 const PORT = process.env.PORT || 5000;
+const MONGO_URI = process.env.MONGODB_URI;
 
-// Connect to MongoDB
-connectDB();
+if (!MONGO_URI) {
+  console.error('MONGO_URI is not defined');
+  process.exit(1);
+}
 
-// Middleware to parse JSON
-app.use(express.json()); // For parsing application/json
-
-// Apply CORS middleware globally if needed
-app.use(cors(corsOptions));
+mongoose.connect(MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => console.log('MongoDB connected'))
+.catch(err => console.log('Error connecting to MongoDB:', err));
 
 app.use('/users', userRoutes);
+app.use('/products', productRoutes);
+app.use('/bookings', bookingRoutes);
+app.use('/auth', authRoutes);
+app.use('/favorites', favoriteRoutes);
+app.use('/reviews', reviewRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-
-
-
-
-
-
-

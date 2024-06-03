@@ -1,109 +1,162 @@
-.container {
-    position: relative;
+.bookings {
+  width: 100%;
+  padding: 20px;
+  background-color: #f0f2f5; /* Light background for modern look */
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
+.bookings h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-align: center; /* Center the section title */
+  color: #333; /* Darker text for titles */
 }
 
-.car-logo {
-    text-align: center;
+.bookings-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
-.icon-right {
-    width: 120px; 
-    height: 60px;
-    margin-right: 50px;
+.booking-card {
+  position: relative;
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
 }
 
-.icon-left{
-    width: 120px; 
-    height: 70px;
-    margin-left: 50px;
+.booking-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
-
-.details-text {
-    text-align: center;
+.booking-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
 }
 
-.booking {
-    width: 100%;
-    height: 49vh;
+.booking-info {
+  padding: 15px;
 }
 
-.details-text p {
-    font-weight: bold;
-    font-size: 45px;
-    color: black;
-    
+.booking-card h3 {
+  font-size: 22px;
+  margin: 10px 0;
 }
 
-.details-text h4 {
-    font-weight: bold;
-    color: black;
-    margin-bottom: 15px;
-    
+.booking-card p {
+  margin: 5px 0;
 }
 
-.car {
-    width: 100%;
-    height: 45vh;
+.booking-card button {
+  background-color: #ff4b5c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
 }
 
-.car-box{
-    width: 100%;
-    height: 10vh;
-    background: url('../assets/images/separator.svg');
+.booking-card button:hover {
+  background-color: #ff2a3b;
 }
 
-.car-details-text h2{
-    color: white;
-    text-align: center;
-    padding-top: 25px;
-    margin-bottom: 60px;
+.checkout-button {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 10px;
 }
 
-.specifications-box{
-    border-radius: 10px;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-    width: 100%;
-    height: 59vh;
+.checkout-button:hover {
+  background-color: #0056b3;
 }
 
-.specifications-details-box{ 
-    padding-top: 55px;
-    text-align: center;
-    margin: 45px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 20px;
-    width: 70%;
-    height: 20vh;
-    background-color: rgb(104, 104, 104);
+.empty-bookings {
+  text-align: center;
+  font-size: 24px;
+  color: #888;
+  margin-top: 50px;
 }
 
-.reviews-box{
-    border-radius: 10px;
-    margin-top: 10px;
-    width: 100%;
-    height: 59vh;
-    background-color: grey;
+.checkout-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
 }
 
-.book-btn{
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    text-align: center;
+.checkout-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
 }
 
-.specifications-text{
-    margin-top: 20px;
-    color: white;
+.checkout-content h2 {
+  margin-bottom: 20px;
+}
+
+.payment-form {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.payment-form label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.payment-form input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.payment-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.payment-form button:hover {
+  background-color: #0056b3;
+}
+
+.close-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #ff4b5c;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.close-button:hover {
+  background-color: #ff2a3b;
 }

@@ -1,0 +1,179 @@
+/* src/css/productCard.css */
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  width: 300px; /* Adjusted width for card */
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 10px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+}
+
+.rating p {
+  margin-left: 5px;
+}
+
+.heart-icon {
+  font-size: 24px;
+  color: red;
+  cursor: pointer;
+}
+
+.product-info h2 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.product-info p {
+  margin: 5px 0;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+}
+
+.location p {
+  margin-left: 5px;
+}
+
+.divider {
+  border: none;
+  border-top: 2px solid #555;
+  margin: 10px 0;
+}
+
+.product-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-icons p {
+  margin: 0;
+}
+
+.details-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.details-button:hover {
+  background-color: #0056b3;
+}
+
+
+.product-info {
+  padding: 10px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+}
+
+.rating p {
+  margin-left: 5px;
+}
+
+.heart-icon {
+  font-size: 24px;
+  color: rgb(49, 49, 49);
+}
+
+.product-info h2 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.product-info p {
+  margin: 5px 0;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+}
+
+.location p {
+  margin-left: 5px;
+}
+
+.divider {
+  border: none;
+  border-top: 2px solid #555; /* Darker line */
+  margin: 10px 0;
+}
+
+.product-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.transmission {
+  display: flex;
+  align-items: center;
+}
+
+.transmission p {
+  margin-left: 5px;
+}
+
+.product-icons p {
+  margin: 0;
+}
+
+.details-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.details-button:hover {
+  background-color: #0056b3;
+}

@@ -1,0 +1,81 @@
+.home {
+  width: 100%;
+  padding: 20px;
+  background-color: #f0f2f5; /* Light background for modern look */
+}
+
+.banner {
+  text-align: center;
+  background-color: #007bff;
+  color: white;
+  padding: 50px 0;
+  margin-bottom: 20px;
+}
+
+.banner h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.banner p {
+  font-size: 24px;
+}
+
+.filters {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filter-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.filter-brands button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filter-brands button:hover {
+  background-color: #0056b3;
+}
+
+.filter-location select, .filter-price input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+.products-container .product-card {
+  width: 100%;
+}
+
+.about {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.about h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.about p {
+  font-size: 18px;
+}

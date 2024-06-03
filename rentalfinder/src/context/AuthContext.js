@@ -23,18 +23,25 @@ const AuthProvider = ({ children }) => {
     setUser(null);
   };
 
-  const updateProfilePicture = (profilePicture) => {
-    const updatedUser = { ...user, profilePicture };
-    sessionStorage.setItem('user', JSON.stringify(updatedUser));
-    setUser(updatedUser);
+  const updateUserFavorites = (favorites) => {
+    if (user) {
+      const updatedUser = { ...user, favorites };
+      sessionStorage.setItem('user', JSON.stringify(updatedUser));
+      setUser(updatedUser);
+    }
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, updateProfilePicture }}>
+    <AuthContext.Provider value={{ user, login, logout, updateUserFavorites }}>
       {children}
     </AuthContext.Provider>
   );
 };
 
 export { AuthContext, AuthProvider };
+
+
+
+
+
 

@@ -1,3 +1,4 @@
+// src/pages/navbar.js
 import React, { useContext } from 'react';
 import './componentCSS/navbar.css';
 import { Link, useLocation } from 'react-router-dom';
@@ -69,8 +70,8 @@ function NavBar({ isDark, setIsDark }) {
                     </Link>
                 </div>
                 <div className="NavTextContainer">
-                    <Link to="/booking" className={`CenterText ${location.pathname === "/booking" ? "active" : ""}`}>
-                        <h2>Booking</h2>
+                    <Link to="/bookings" className={`CenterText ${location.pathname === "/bookings" ? "active" : ""}`}>
+                        <h2>Bookings</h2>
                         <div className="CenterIcon">
                             <svg width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M2.375 18.5C1.85937 18.5 1.41812 18.3239 1.05125 17.9717C0.684375 17.6195 0.500625 17.1956 0.5 16.7V2.3C0.5 1.805 0.68375 1.3814 1.05125 1.0292C1.41875 0.677 1.86 0.5006 2.375 0.5H13.625C14.1406 0.5 14.5822 0.6764 14.9497 1.0292C15.3172 1.382 15.5006 1.8056 15.5 2.3V16.7C15.5 17.195 15.3166 17.6189 14.9497 17.9717C14.5828 18.3245 14.1412 18.5006 13.625 18.5H2.375ZM2.375 16.1C2.375 16.4314 2.65482 16.7 3 16.7H13C13.3452 16.7 13.625 16.4314 13.625 16.1V2.9C13.625 2.56863 13.3452 2.3 13 2.3H12.375C12.0298 2.3 11.75 2.56863 11.75 2.9V8.38806C11.75 8.48133 11.644 8.53895 11.5607 8.49096L9.72781 7.43522C9.52988 7.32121 9.28262 7.32121 9.08469 7.43522L7.25181 8.49096C7.1685 8.53895 7.0625 8.48133 7.0625 8.38806V2.9C7.0625 2.56863 6.78268 2.3 6.4375 2.3H3C2.65482 2.3 2.375 2.56863 2.375 2.9V16.1Z"/>
@@ -105,3 +106,4 @@ function NavBar({ isDark, setIsDark }) {
 }
 
 export default NavBar;
+

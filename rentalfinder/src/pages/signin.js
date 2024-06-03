@@ -30,7 +30,7 @@ function SignIn() {
     setLoading(true);
     try {
       const response = await axios.post('http://localhost:5000/users/signin', data);
-      login(response.data.user); // Save user data in context and session storage
+      login(response.data.user);
       alert(response.data.message);
       setLoading(false);
       navigate('/');

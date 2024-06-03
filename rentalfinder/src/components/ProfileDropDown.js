@@ -1,4 +1,4 @@
-// src/components/ProfileDropdown.js
+// src/components/ProfileDropDown.js
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -42,21 +42,33 @@ const ProfileDropdown = () => {
     <div className="profile-dropdown">
       <button className="dropdown-btn">Profile</button>
       <div className="dropdown-content">
-        <input
-          type="file"
-          accept="image/*"
-          onChange={handleProfilePictureChange}
-          style={{ display: 'none' }}
-          id="profile-picture-input"
-        />
-        <label htmlFor="profile-picture-input">Change Profile Picture</label>
-        <button onClick={handleLogout}>Logout</button>
-        <button onClick={handleDeleteAccount}>Delete Account</button>
+        {user ? (
+          <>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handleProfilePictureChange}
+              style={{ display: 'none' }}
+              id="profile-picture-input"
+            />
+            <label htmlFor="profile-picture-input">Change Profile Picture</label>
+            <button onClick={handleLogout}>Logout</button>
+            <button onClick={handleDeleteAccount}>Delete Account</button>
+          </>
+        ) : (
+          <>
+            <button onClick={() => navigate('/signin')}>Sign In</button>
+            <button onClick={() => navigate('/signup')}>Sign Up</button>
+          </>
+        )}
       </div>
     </div>
   );
 };
 
 export default ProfileDropdown;
+
+
+
 
 
