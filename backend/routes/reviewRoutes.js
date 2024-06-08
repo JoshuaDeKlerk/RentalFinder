@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get('/:productId', async (req, res) => {
   try {
-    const reviews = await Review.find({ productId: req.params.productId }).populate('userId', 'name');
+    const reviews = await Review.find({ productId: req.params.productId }).populate('userId', 'username profilePicture');
     res.status(200).json(reviews);
   } catch (error) {
     console.error('Error fetching reviews:', error);
@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
       text,
     });
     const savedReview = await newReview.save();
-    const populatedReview = await Review.findById(savedReview._id).populate('userId', 'name');
+    const populatedReview = await Review.findById(savedReview._id).populate('userId', 'username profilePicture');
     res.status(201).json(populatedReview);
   } catch (error) {
     console.error('Error creating review:', error);
@@ -32,5 +32,7 @@ router.post('/', async (req, res) => {
 });
 
 export default router;
+
+
 
 

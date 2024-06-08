@@ -1,7 +1,7 @@
 // src/pages/navbar.js
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './componentCSS/navbar.css';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import LogoBlue from "../assets/logo/LogoBlue.svg";
 import { DarkMode } from './darkmode';
 import ProfileDropdown from './ProfileDropDown';
@@ -9,7 +9,23 @@ import { AuthContext } from '../context/AuthContext';
 
 function NavBar({ isDark, setIsDark }) {
     const location = useLocation();
+    const navigate = useNavigate();
     const { user } = useContext(AuthContext);
+    const [showDropdown, setShowDropdown] = useState(false);
+
+    const handleDropdownToggle = () => {
+        setShowDropdown(!showDropdown);
+    };
+
+    const handleSignIn = () => {
+        navigate('/signin');
+        setShowDropdown(false);
+    };
+
+    const handleSignUp = () => {
+        navigate('/signup');
+        setShowDropdown(false);
+    };
 
     return (
         <div className="NavBar" data-theme={isDark ? "dark" : "light"}>
@@ -24,7 +40,21 @@ function NavBar({ isDark, setIsDark }) {
                     </div>
                     <div className="ProfileName">
                         <h1>{user ? user.username : 'Guest'}</h1>
-                        {user && <ProfileDropdown />}
+                        {user ? (
+                            <ProfileDropdown />
+                        ) : (
+                            <div className="SignInSignUpDropdown">
+                                <button className="dropdown-btn" onClick={handleDropdownToggle}>
+                                    Sign In / Sign Up
+                                </button>
+                                {showDropdown && (
+                                    <div className="dropdown-content">
+                                        <button onClick={handleSignIn}>Sign In</button>
+                                        <button onClick={handleSignUp}>Sign Up</button>
+                                    </div>
+                                )}
+                            </div>
+                        )}
                     </div>
                 </div>
                 <div className="LocationContainer">
@@ -56,7 +86,7 @@ function NavBar({ isDark, setIsDark }) {
                                 <path d="M8.21429 3.07143C5.37396 3.07143 3.07143 5.37396 3.07143 8.21429C3.07143 11.0546 5.37397 13.3571 8.21429 13.3571C11.0546 13.3571 13.3571 11.0546 13.3571 8.21429C13.3571 5.37397 11.0546 3.07143 8.21429 3.07143ZM0.5 8.21429C0.5 3.9538 3.9538 0.5 8.21429 0.5C12.4747 0.5 15.9286 3.9538 15.9286 8.21429C15.9286 9.88314 15.3986 11.4282 14.4979 12.6904L18.1221 16.3038C18.6249 16.8051 18.6261 17.6192 18.1248 18.1221C17.6234 18.6249 16.8094 18.6261 16.3065 18.1248L12.6778 14.5069C11.4179 15.4022 9.87755 15.9286 8.21429 15.9286C3.9538 15.9286 0.5 12.4747 0.5 8.21429Z"/>
                             </svg>
                         </div>
-                    </ Link>
+                    </Link>
                 </div>
                 <div className="NavTextContainer">
                     <Link to="/favorites" className={`CenterText ${location.pathname === "/favorites" ? "active" : ""}`}>
@@ -106,4 +136,8 @@ function NavBar({ isDark, setIsDark }) {
 }
 
 export default NavBar;
+
+
+
+
 

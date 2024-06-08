@@ -8,12 +8,14 @@ import bookingRoutes from './routes/bookingRoutes.js';
 import authRoutes from './routes/authRoutes.js';
 import favoriteRoutes from './routes/favoriteRoutes.js';
 import reviewRoutes from './routes/reviewRoutes.js';
+import uploadRoutes from './routes/uploadRoutes.js';
 
 dotenv.config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use('/uploads', express.static('uploads')); // Serve static files from the 'uploads' directory
 
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGODB_URI;
@@ -36,7 +38,9 @@ app.use('/bookings', bookingRoutes);
 app.use('/auth', authRoutes);
 app.use('/favorites', favoriteRoutes);
 app.use('/reviews', reviewRoutes);
+app.use('/upload', uploadRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+

@@ -1,169 +1,186 @@
-.bookings {
+.details-container {
   width: 100%;
   padding: 20px;
   background-color: #f0f2f5; /* Light background for modern look */
+  color: #333;
+  font-family: Arial, sans-serif;
 }
 
-.bookings h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
-  text-align: center; /* Center the section title */
-  color: #333; /* Darker text for titles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
 }
 
-.total-price {
-  font-size: 24px;
-  margin-bottom: 20px;
-  text-align: center;
+.icon-left, .icon-right {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #007bff;
+}
+
+.icon-left:hover, .icon-right:hover {
+  color: #0056b3;
+}
+
+.details-text h1 {
+  font-size: 28px;
+  margin: 0;
+}
+
+.details-text p {
+  font-size: 18px;
   color: #555;
 }
 
-.bookings-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.booking-card {
-  position: relative;
-  width: 300px;
-  border: 1px solid #ddd;
+.car-logo img {
+  width: 100px;
+  height: auto;
   border-radius: 10px;
-  overflow: hidden;
-  background-color: #fff;
+}
+
+.car-box, .specifications-box, .reviews-box {
+  margin: 20px 0;
+}
+
+.car-details-text, .specifications-text, h3 {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.booking {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
 }
 
-.booking-card:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+.booking h3 {
+  margin-bottom: 20px;
 }
 
-.booking-card img {
+.date-picker-container {
+  margin-bottom: 20px;
+}
+
+.date-picker {
   width: 100%;
-  height: 150px;
-  object-fit: cover;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
-.booking-info {
-  padding: 15px;
+.total-price {
+  font-size: 20px;
+  margin-bottom: 20px;
 }
 
-.booking-card h3 {
-  font-size: 22px;
-  margin: 10px 0;
-}
-
-.booking-card p {
-  margin: 5px 0;
-}
-
-.booking-card button {
-  background-color: #ff4b5c;
+.book-btn {
+  background-color: #28a745;
   color: white;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 5px;
-  margin-top: 10px;
-}
-
-.booking-card button:hover {
-  background-color: #ff2a3b;
-}
-
-.checkout-button {
-  display: block;
   width: 100%;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  text-align: center;
-  border-radius: 5px;
-  text-decoration: none;
-  margin-top: 10px;
 }
 
-.checkout-button:hover {
-  background-color: #0056b3;
+.book-btn:hover {
+  background-color: #218838;
 }
 
-.empty-bookings {
-  text-align: center;
-  font-size: 24px;
-  color: #888;
-  margin-top: 50px;
-}
-
-.checkout-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-
-.checkout-content {
+.specifications-details-box {
   background: #fff;
   padding: 20px;
   border-radius: 10px;
-  width: 400px;
-  max-width: 90%;
-  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.checkout-content h2 {
-  margin-bottom: 20px;
+.specifications-text p {
+  margin: 5px 0;
 }
 
-.payment-form {
+.reviews-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reviews-list {
   margin-top: 20px;
-  text-align: left;
 }
 
-.payment-form label {
+.review {
+  display: flex;
+  align-items: flex-start;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.review:last-child {
+  border-bottom: none;
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.review-profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.review-form {
+  margin-top: 20px;
+}
+
+.review-form h4 {
+  margin-bottom: 10px;
+}
+
+.review-form label {
   display: block;
   margin: 10px 0 5px;
 }
 
-.payment-form input {
+.review-form select, .review-form textarea {
   width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
+  padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
 }
 
-.payment-form button {
-  width: 100%;
-  padding: 10px;
+.submit-review-btn {
   background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 5px;
+  padding: 10px 20px;
   cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
 }
 
-.payment-form button:hover {
+.submit-review-btn:hover {
   background-color: #0056b3;
 }
 
-.close-button {
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: #ff4b5c;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
+.about {
+  text-align: center;
+  margin-top: 50px;
 }
 
-.close-button:hover {
-  background-color: #ff2a3b;
+.about h2 {
+  font-size: 24px;
+}
+
+.about p {
+  font-size: 16px;
+  color: #555;
 }

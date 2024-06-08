@@ -1,4 +1,3 @@
-// src/components/ProfileDropDown.js
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -27,14 +26,20 @@ const ProfileDropdown = () => {
     }
   };
 
-  const handleProfilePictureChange = (e) => {
+  const handleProfilePictureChange = async (e) => {
     const file = e.target.files[0];
     if (file) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        updateProfilePicture(reader.result);
-      };
-      reader.readAsDataURL(file);
+      const formData = new FormData();
+      formData.append('profilePicture', file);
+      formData.append('userId', user._id);
+
+      try {
+        const response = await axios.post('http://localhost:5000/upload/upload-profile-picture', formData);
+        updateProfilePicture(response.data.profilePicture);
+      } catch (error) {
+        console.error('Error uploading profile picture:', error);
+        alert('Error uploading profile picture');
+      }
     }
   };
 
@@ -67,6 +72,13 @@ const ProfileDropdown = () => {
 };
 
 export default ProfileDropdown;
+
+
+
+
+
+
+
 
 
 

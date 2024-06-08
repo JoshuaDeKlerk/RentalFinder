@@ -96,6 +96,11 @@ const Details = () => {
         startDate,
         endDate,
         totalPrice,
+        checkoutDetails: {
+          cardNumber: '1234-5678-9101-1121',
+          expiryDate: '12/23',
+          cvv: '123'
+        }
       });
       alert(response.data.message);
       navigate('/bookings'); // Navigate to the bookings page
@@ -188,7 +193,7 @@ const Details = () => {
         <div className="reviews-list">
           {reviews.map(review => (
             <div key={review._id} className="review">
-              <p><strong>{review.userId.name}</strong></p>
+              <p><strong>{review.userId.username}</strong></p>
               <p>Rating: {review.rating}</p>
               <p>{review.text}</p>
             </div>
@@ -218,6 +223,16 @@ const Details = () => {
 };
 
 export default Details;
+
+
+
+
+
+
+
+
+
+
 
 
 

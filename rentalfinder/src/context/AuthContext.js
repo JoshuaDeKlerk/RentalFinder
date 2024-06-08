@@ -1,4 +1,3 @@
-// src/context/AuthContext.js
 import React, { createContext, useState, useEffect } from 'react';
 
 const AuthContext = createContext();
@@ -23,22 +22,25 @@ const AuthProvider = ({ children }) => {
     setUser(null);
   };
 
-  const updateUserFavorites = (favorites) => {
+  const updateProfilePicture = (profilePicture) => {
     if (user) {
-      const updatedUser = { ...user, favorites };
+      const updatedUser = { ...user, profilePicture };
       sessionStorage.setItem('user', JSON.stringify(updatedUser));
       setUser(updatedUser);
     }
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, updateUserFavorites }}>
+    <AuthContext.Provider value={{ user, login, logout, updateProfilePicture }}>
       {children}
     </AuthContext.Provider>
   );
 };
 
 export { AuthContext, AuthProvider };
+
+
+
 
 
 

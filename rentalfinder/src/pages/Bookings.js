@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 import { AuthContext } from '../context/AuthContext';
+import CheckoutModal from '../components/CheckoutModals';
 import '../css/bookings.css';
 
 const Bookings = () => {
@@ -8,6 +9,7 @@ const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [selectedBooking, setSelectedBooking] = useState(null);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const fetchBookings = async () => {
@@ -44,10 +46,12 @@ const Bookings = () => {
 
   const handleCheckout = (booking) => {
     setSelectedBooking(booking);
+    setShowModal(true);
   };
 
   const closeCheckout = () => {
     setSelectedBooking(null);
+    setShowModal(false);
   };
 
   const handlePayment = async (e) => {
@@ -103,32 +107,19 @@ const Bookings = () => {
         </div>
       )}
 
-      {selectedBooking && (
-        <div className="checkout-modal">
-          <div className="checkout-content">
-            <h2>Checkout</h2>
-            <p>Car: {selectedBooking.car.name}</p>
-            <p>Start Date: {new Date(selectedBooking.startDate).toLocaleDateString()}</p>
-            <p>End Date: {new Date(selectedBooking.endDate).toLocaleDateString()}</p>
-            <p>Total Price: {selectedBooking.totalPrice}</p>
-            <form onSubmit={handlePayment} className="payment-form">
-              <label>Card Number</label>
-              <input type="text" name="cardNumber" placeholder="1234 5678 9012 3456" />
-              <label>Expiry Date</label>
-              <input type="text" name="expiryDate" placeholder="MM/YY" />
-              <label>CVV</label>
-              <input type="text" name="cvv" placeholder="123" />
-              <button type="submit">Pay Now</button>
-            </form>
-            <button className="close-button" onClick={closeCheckout}>Close</button>
-          </div>
-        </div>
-      )}
+      <CheckoutModal
+        show={showModal}
+        handleClose={closeCheckout}
+        handlePayment={handlePayment}
+        bookingData={{ carName: selectedBooking?.car.name, totalPrice: selectedBooking?.totalPrice }}
+      />
     </div>
   );
 };
 
 export default Bookings;
+
+
 
 
 
