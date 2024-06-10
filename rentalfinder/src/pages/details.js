@@ -5,6 +5,17 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { AuthContext } from '../context/AuthContext';
 import '../css/details.css';
+import Carousel from 'react-bootstrap/Carousel';
+import car from '../assets/images/car.svg';
+import car1 from '../assets/images/car1.svg';
+import car2 from '../assets/images/car2.svg';
+import Button from 'react-bootstrap/Button';
+import fuel from '../assets/images/fuel.svg';
+import speed from '../assets/images/speed.svg';
+import seat from '../assets/images/seat.svg';
+import engine from '../assets/images/engine.svg';
+import manual from '../assets/images/manual.svg';
+import aircon from '../assets/images/aircon.svg';
 
 const Details = () => {
   const { id } = useParams();
@@ -149,10 +160,22 @@ const Details = () => {
         </div>
         <button className="icon-right">Favorite</button>
       </div>
+      <Carousel data-bs-theme="dark">
+          <Carousel.Item>
+            <img className="car" src={car} alt="First slide" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="car" src={car1} alt="Second slide" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="car" src={car2} alt="Third slide" />
+          </Carousel.Item>
+        </Carousel>
       <div className="car-box">
         <h2 className="car-details-text">Car Details</h2>
       </div>
       <div className="booking">
+        
         <h3>Price: {product.price} per day</h3>
         <div>
           <label>Start Date</label>
@@ -223,44 +246,3 @@ const Details = () => {
 };
 
 export default Details;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
