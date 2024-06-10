@@ -22,7 +22,8 @@ mongoose.connect(MONGO_URI, {
     {
       name: "Tesla Model S",
       year: "2022",
-      images: ["https://via.placeholder.com/400"],
+      logo: "https://example.com/tesla-logo.png",
+      images: ['https://www.pngall.com/wp-content/uploads/11/Tesla-Model-S-PNG-Image-HD.png'],
       fuel: "Electric",
       seats: "Five Seaters",
       topSpeed: "322 km/h",
@@ -36,6 +37,7 @@ mongoose.connect(MONGO_URI, {
     {
       name: "Porsche 911",
       year: "2019",
+      logo: "https://example.com/tesla-logo.png",
       images: ["https://via.placeholder.com/400"],
       fuel: "Petrol",
       seats: "Two Seaters",
@@ -50,7 +52,8 @@ mongoose.connect(MONGO_URI, {
     {
       name: "Lamborghini Aventador",
       year: "2020",
-      images: ["https://via.placeholder.com/400"],
+      logo: "https://www.freepnglogos.com/uploads/lamborghini-logo-png/lamborghini-logo-wallpapers-pictures-images-1.png",
+      images: "https://pngimg.com/d/lamborghini_PNG102907.png",
       fuel: "Petrol",
       seats: "Two Seaters",
       topSpeed: "350 km/h",
@@ -64,6 +67,7 @@ mongoose.connect(MONGO_URI, {
     {
       name: "Ford Mustang",
       year: "2020",
+      logo: "https://example.com/tesla-logo.png",
       images: ["https://via.placeholder.com/400"],
       fuel: "Petrol",
       seats: "Four Seaters",
@@ -78,6 +82,7 @@ mongoose.connect(MONGO_URI, {
     {
       name: "Audi R8",
       year: "2018",
+      logo: "https://example.com/tesla-logo.png",
       images: ["https://via.placeholder.com/400"],
       fuel: "Petrol",
       seats: "Two Seaters",
@@ -92,6 +97,7 @@ mongoose.connect(MONGO_URI, {
     {
       name: "BMW M3",
       year: "2020",
+      logo: "https://example.com/tesla-logo.png",
       images: ["https://via.placeholder.com/400"],
       fuel: "Petrol",
       seats: "Four Seaters",
@@ -106,6 +112,7 @@ mongoose.connect(MONGO_URI, {
     {
       name: "Mercedes-Benz G-Class",
       year: "2021",
+      logo: "https://example.com/tesla-logo.png",
       images: ["https://via.placeholder.com/400"],
       fuel: "Petrol",
       seats: "Five Seaters",

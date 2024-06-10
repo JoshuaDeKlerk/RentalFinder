@@ -16,6 +16,7 @@ import seat from '../assets/images/seat.svg';
 import engine from '../assets/images/engine.svg';
 import manual from '../assets/images/manual.svg';
 import aircon from '../assets/images/aircon.svg';
+import heart from '../assets/icons/heart.svg'
 
 const Details = () => {
   const { id } = useParams();
@@ -150,64 +151,53 @@ const Details = () => {
   return (
     <div className="details-container">
       <div className="header">
-        <button className="icon-left" onClick={() => navigate(-1)}>Back</button>
-        <div className="details-text">
-          <h1>{product.name}</h1>
-          <p>{product.year}</p>
+        <div className="carDetailsTopSlider">
+          <div className="SideTopSlider">
+            {/* <button className="icon-left" onClick={() => navigate(-1)}>Back</button> */}
+          </div>
+          <div className="MiddleTopSlider">
+            <div className="car-logo">
+              <img src={product.logo} alt={product.name} className="car" />
+            </div>
+            <div className="details-text">
+              <h1>{product.name}</h1>
+              <p>{product.year}</p>
+            </div>
+          </div>
+          <div className="SideTopSlider rightSideTop">
+            <img src={heart} alt="Favorite" className="icon" />
+          </div>
         </div>
-        <div className="car-logo">
-          <img src={product.images[0]} alt={product.name} className="car" />
+        <div className="carDetailsBottom">
+          <Carousel data-bs-theme="dark">
+            <Carousel.Item>
+              <img className="carImageCarousel" src={car} alt="First slide" />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img className="carImageCarousel" src={car1} alt="Second slide" />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img className="carImageCarousel" src={car2} alt="Third slide" />
+            </Carousel.Item>
+          </Carousel>
         </div>
-        <button className="icon-right">Favorite</button>
-      </div>
-      <Carousel data-bs-theme="dark">
-          <Carousel.Item>
-            <img className="car" src={car} alt="First slide" />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img className="car" src={car1} alt="Second slide" />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img className="car" src={car2} alt="Third slide" />
-          </Carousel.Item>
-        </Carousel>
-      <div className="car-box">
-        <h2 className="car-details-text">Car Details</h2>
-      </div>
-      <div className="booking">
         
-        <h3>Price: {product.price} per day</h3>
-        <div>
-          <label>Start Date</label>
-          <DatePicker
-            selected={startDate}
-            onChange={date => setStartDate(date)}
-            filterDate={date => !isDateUnavailable(date)}
-            className="date-picker"
-          />
-        </div>
-        <div>
-          <label>End Date</label>
-          <DatePicker
-            selected={endDate}
-            onChange={date => setEndDate(date)}
-            filterDate={date => !isDateUnavailable(date)}
-            className="date-picker"
-          />
-        </div>
-        <div className="total-price">Total Price: {totalPrice}</div>
-        <button className="book-btn" onClick={handleBooking}>Book Car</button>
       </div>
+
+      <div className="car-box">
+        <h2 className="car-section">Car Details</h2>
+      </div>
+      
       <div className="specifications-box">
         <h3>Specifications</h3>
         <div className="specifications-details-box">
           <div className="specifications-text">
-            <p>Fuel: {product.fuel}</p>
-            <p>Seats: {product.seats}</p>
-            <p>Top Speed: {product.topSpeed}</p>
-            <p>Engine: {product.engine}</p>
-            <p>Transmission: {product.transmission}</p>
-            <p>Air Conditioning: {product.airConditioning}</p>
+          <p><img src={fuel} alt="Fuel" /> {product.fuel}</p>
+            <p><img src={seat} alt="Seats" /> {product.seats}</p>
+            <p><img src={speed} alt="Top Speed" /> {product.topSpeed}</p>
+            <p><img src={engine} alt="Engine" /> {product.engine}</p>
+            <p><img src={manual} alt="Transmission" /> {product.transmission}</p>
+            <p><img src={aircon} alt="Air Conditioning" /> {product.airConditioning}</p>
           </div>
         </div>
       </div>
@@ -236,6 +226,30 @@ const Details = () => {
           <textarea value={reviewText} onChange={e => setReviewText(e.target.value)} />
           <button className="submit-review-btn" onClick={handleReviewSubmit}>Submit Review</button>
         </div>
+      </div>
+      <div className="booking">
+        
+        <h3>Price: {product.price} per day</h3>
+        <div>
+          <label>Start Date</label>
+          <DatePicker
+            selected={startDate}
+            onChange={date => setStartDate(date)}
+            filterDate={date => !isDateUnavailable(date)}
+            className="date-picker"
+          />
+        </div>
+        <div>
+          <label>End Date</label>
+          <DatePicker
+            selected={endDate}
+            onChange={date => setEndDate(date)}
+            filterDate={date => !isDateUnavailable(date)}
+            className="date-picker"
+          />
+        </div>
+        <div className="total-price">Total Price: {totalPrice}</div>
+        <button className="book-btn" onClick={handleBooking}>Book Car</button>
       </div>
       <footer className="about">
         <h2>About</h2>
