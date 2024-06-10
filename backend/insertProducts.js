@@ -52,7 +52,7 @@ mongoose.connect(MONGO_URI, {
     {
       name: "Lamborghini Aventador",
       year: "2020",
-      logo: "https://www.freepnglogos.com/uploads/lamborghini-logo-png/lamborghini-logo-wallpapers-pictures-images-1.png",
+      logo: 'https://www.freepnglogos.com/uploads/lamborghini-logo-png/lamborghini-logo-wallpapers-pictures-images-1.png',
       images: "https://pngimg.com/d/lamborghini_PNG102907.png",
       fuel: "Petrol",
       seats: "Two Seaters",
@@ -127,6 +127,7 @@ mongoose.connect(MONGO_URI, {
     {
       name: "Chevrolet Camaro",
       year: "2019",
+      logo: "https://example.com/tesla-logo.png",
       images: ["https://via.placeholder.com/400"],
       fuel: "Petrol",
       seats: "Four Seaters",
@@ -141,6 +142,7 @@ mongoose.connect(MONGO_URI, {
     {
       name: "Ferrari F8",
       year: "2021",
+      logo: "https://example.com/tesla-logo.png",
       images: ["https://via.placeholder.com/400"],
       fuel: "Petrol",
       seats: "Two Seaters",
@@ -155,6 +157,7 @@ mongoose.connect(MONGO_URI, {
     {
       name: "Lexus RX 350",
       year: "2020",
+      logo: "https://example.com/tesla-logo.png",
       images: ["https://via.placeholder.com/400"],
       fuel: "Petrol",
       seats: "Five Seaters",
@@ -169,6 +172,7 @@ mongoose.connect(MONGO_URI, {
     {
       name: "Bentley Bentayga",
       year: "2021",
+      logo: "https://example.com/tesla-logo.png",
       images: ["https://via.placeholder.com/400"],
       fuel: "Petrol",
       seats: "Five Seaters",
@@ -183,6 +187,7 @@ mongoose.connect(MONGO_URI, {
     {
       name: "Nissan GT-R",
       year: "2021",
+      logo: "https://example.com/tesla-logo.png",
       images: ["https://via.placeholder.com/400"],
       fuel: "Petrol",
       seats: "Four Seaters",
@@ -197,6 +202,7 @@ mongoose.connect(MONGO_URI, {
     {
       name: "Jaguar F-Type",
       year: "2019",
+      logo: "https://example.com/tesla-logo.png",
       images: ["https://via.placeholder.com/400"],
       fuel: "Petrol",
       seats: "Two Seaters",
@@ -211,6 +217,7 @@ mongoose.connect(MONGO_URI, {
     {
       name: "Bentley Continental GT",
       year: "2020",
+      logo: "https://example.com/tesla-logo.png",
       images: ["https://via.placeholder.com/400"],
       fuel: "Petrol",
       seats: "Four Seaters",
@@ -225,6 +232,7 @@ mongoose.connect(MONGO_URI, {
     {
       name: "Aston Martin DB11",
       year: "2019",
+      logo: "https://example.com/tesla-logo.png",
       images: ["https://via.placeholder.com/400"],
       fuel: "Petrol",
       seats: "Four Seaters",
@@ -239,6 +247,7 @@ mongoose.connect(MONGO_URI, {
     {
       name: "Rolls-Royce Ghost",
       year: "2020",
+      logo: "https://example.com/tesla-logo.png",
       images: ["https://via.placeholder.com/400"],
       fuel: "Petrol",
       seats: "Five Seaters",
@@ -253,6 +262,7 @@ mongoose.connect(MONGO_URI, {
     {
       name: "Bugatti Chiron",
       year: "2021",
+      logo: "https://example.com/tesla-logo.png",
       images: ["https://via.placeholder.com/400"],
       fuel: "Petrol",
       seats: "Two Seaters",
@@ -267,6 +277,7 @@ mongoose.connect(MONGO_URI, {
     {
       name: "Aston Martin Vantage",
       year: "2020",
+      logo: "https://example.com/tesla-logo.png",
       images: ["https://via.placeholder.com/400"],
       fuel: "Petrol",
       seats: "Two Seaters",
@@ -281,6 +292,7 @@ mongoose.connect(MONGO_URI, {
     {
       name: "Alfa Romeo Giulia",
       year: "2019",
+      logo: "https://example.com/tesla-logo.png",
       images: ["https://via.placeholder.com/400"],
       fuel: "Petrol",
       seats: "Five Seaters",
@@ -295,6 +307,7 @@ mongoose.connect(MONGO_URI, {
     {
       name: "Maserati Ghibli",
       year: "2019",
+      logo: "https://example.com/tesla-logo.png",
       images: ["https://via.placeholder.com/400"],
       fuel: "Petrol",
       seats: "Five Seaters",
@@ -309,6 +322,7 @@ mongoose.connect(MONGO_URI, {
     {
       name: "Lexus LC 500",
       year: "2020",
+      logo: "https://example.com/tesla-logo.png",
       images: ["https://via.placeholder.com/400"],
       fuel: "Petrol",
       seats: "Four Seaters",
@@ -323,6 +337,7 @@ mongoose.connect(MONGO_URI, {
     {
       name: "Pagani Huayra",
       year: "2018",
+      logo: "https://example.com/tesla-logo.png",
       images: ["https://via.placeholder.com/400"],
       fuel: "Petrol",
       seats: "Two Seaters",
@@ -337,6 +352,7 @@ mongoose.connect(MONGO_URI, {
     {
       name: "Koenigsegg Jesko",
       year: "2021",
+      logo: "https://example.com/tesla-logo.png",
       images: ["https://via.placeholder.com/400"],
       fuel: "Petrol",
       seats: "Two Seaters",
@@ -351,6 +367,7 @@ mongoose.connect(MONGO_URI, {
     {
       name: "Rimac C_Two",
       year: "2020",
+      logo: "https://example.com/tesla-logo.png",
       images: ["https://via.placeholder.com/400"],
       fuel: "Electric",
       seats: "Two Seaters",
@@ -365,6 +382,7 @@ mongoose.connect(MONGO_URI, {
     {
       name: "Lotus Evija",
       year: "2021",
+      logo: "https://example.com/tesla-logo.png",
       images: ["https://via.placeholder.com/400"],
       fuel: "Electric",
       seats: "Two Seaters",
@@ -379,6 +397,7 @@ mongoose.connect(MONGO_URI, {
     {
       name: "Hennessey Venom F5",
       year: "2020",
+      logo: "https://example.com/tesla-logo.png",
       images: ["https://via.placeholder.com/400"],
       fuel: "Petrol",
       seats: "Two Seaters",
@@ -393,6 +412,7 @@ mongoose.connect(MONGO_URI, {
     {
       name: "Rolls-Royce Wraith",
       year: "2019",
+      logo: "https://example.com/tesla-logo.png",
       images: ["https://via.placeholder.com/400"],
       fuel: "Petrol",
       seats: "Four Seaters",
@@ -407,6 +427,7 @@ mongoose.connect(MONGO_URI, {
     {
       name: "Maserati GranTurismo",
       year: "2018",
+      logo: "https://example.com/tesla-logo.png",
       images: ["https://via.placeholder.com/400"],
       fuel: "Petrol",
       seats: "Four Seaters",
@@ -421,6 +442,7 @@ mongoose.connect(MONGO_URI, {
     {
       name: "BMW i8",
       year: "2020",
+      logo: "https://example.com/tesla-logo.png",
       images: ["https://via.placeholder.com/400"],
       fuel: "Hybrid",
       seats: "Four Seaters",
@@ -435,6 +457,7 @@ mongoose.connect(MONGO_URI, {
     {
       name: "Lamborghini Huracan",
       year: "2021",
+      logo: "https://example.com/tesla-logo.png",
       images: ["https://via.placeholder.com/400"],
       fuel: "Petrol",
       seats: "Two Seaters",

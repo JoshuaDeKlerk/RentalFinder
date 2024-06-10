@@ -157,7 +157,7 @@ const Details = () => {
           </div>
           <div className="MiddleTopSlider">
             <div className="car-logo">
-              <img src={product.logo} alt={product.name} className="car" />
+              <img src={product.images[0]} alt={product.name} className="car" />
             </div>
             <div className="details-text">
               <h1>{product.name}</h1>
@@ -212,49 +212,73 @@ const Details = () => {
             </div>
           ))}
         </div>
-        <div className="review-form">
-          <h4>Write Your Own Review Here!</h4>
-          <label>Rating:</label>
-          <select value={reviewRating} onChange={e => setReviewRating(e.target.value)}>
-            <option value={5}>Excellent</option>
-            <option value={4}>Good</option>
-            <option value={3}>Average</option>
-            <option value={2}>Poor</option>
-            <option value={1}>Terrible</option>
-          </select>
-          <label>Review:</label>
-          <textarea value={reviewText} onChange={e => setReviewText(e.target.value)} />
-          <button className="submit-review-btn" onClick={handleReviewSubmit}>Submit Review</button>
-        </div>
+        {user && (
+          <div className="review-form">
+            <h4>Leave a Review</h4>
+            <textarea
+              value={reviewText}
+              onChange={(e) => setReviewText(e.target.value)}
+              placeholder="Write your review here"
+            />
+            <select
+              value={reviewRating}
+              onChange={(e) => setReviewRating(parseInt(e.target.value))}
+            >
+              {[1, 2, 3, 4, 5].map(rating => (
+                <option key={rating} value={rating}>{rating}</option>
+              ))}
+            </select>
+            <button onClick={handleReviewSubmit}>Submit Review</button>
+          </div>
+        )}
       </div>
-      <div className="booking">
-        
-        <h3>Price: {product.price} per day</h3>
-        <div>
-          <label>Start Date</label>
-          <DatePicker
-            selected={startDate}
-            onChange={date => setStartDate(date)}
-            filterDate={date => !isDateUnavailable(date)}
-            className="date-picker"
-          />
+      <div className="booking-section">
+        <h2>Booking</h2>
+        <div className="date-picker">
+          <div>
+            <label>Start Date:</label>
+            <DatePicker
+              selected={startDate}
+              onChange={(date) => setStartDate(date)}
+              minDate={new Date()}
+              excludeDates={unavailableDates.map(({ startDate, endDate }) => {
+                const start = new Date(startDate);
+                const end = new Date(endDate);
+                let dateArray = [];
+                let currentDate = start;
+                while (currentDate <= end) {
+                  dateArray.push(new Date(currentDate));
+                  currentDate.setDate(currentDate.getDate() + 1);
+                }
+                return dateArray;
+              }).flat()}
+            />
+          </div>
+          <div>
+            <label>End Date:</label>
+            <DatePicker
+              selected={endDate}
+              onChange={(date) => setEndDate(date)}
+              minDate={startDate}
+              excludeDates={unavailableDates.map(({ startDate, endDate }) => {
+                const start = new Date(startDate);
+                const end = new Date(endDate);
+                let dateArray = [];
+                let currentDate = start;
+                while (currentDate <= end) {
+                  dateArray.push(new Date(currentDate));
+                  currentDate.setDate(currentDate.getDate() + 1);
+                }
+                return dateArray;
+              }).flat()}
+            />
+          </div>
         </div>
-        <div>
-          <label>End Date</label>
-          <DatePicker
-            selected={endDate}
-            onChange={date => setEndDate(date)}
-            filterDate={date => !isDateUnavailable(date)}
-            className="date-picker"
-          />
+        <div className="price">
+          <p>Total Price: ${totalPrice}</p>
         </div>
-        <div className="total-price">Total Price: {totalPrice}</div>
-        <button className="book-btn" onClick={handleBooking}>Book Car</button>
+        <button onClick={handleBooking}>Book Now</button>
       </div>
-      <footer className="about">
-        <h2>About</h2>
-        <p>Newsletter</p>
-      </footer>
     </div>
   );
 };
