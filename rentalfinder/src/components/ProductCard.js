@@ -56,7 +56,7 @@ const ProductCard = ({ product, onFavoriteToggle }) => {
           <AiOutlineHeart className="heart-icon" onClick={toggleFavorite} />
         )}
       </div>
-      <img src={product.images} alt={product.name} className="product-image" />
+     <img src={product.images[0]} alt={product.name} className="product-image" />
       <div className="product-info">
         <h2>{product.name}</h2>
         <p>{product.year}</p>

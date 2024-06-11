@@ -153,11 +153,11 @@ const Details = () => {
       <div className="header">
         <div className="carDetailsTopSlider">
           <div className="SideTopSlider">
-            {/* <button className="icon-left" onClick={() => navigate(-1)}>Back</button> */}
+           {/* <button className="icon-left" onClick={() => navigate(-1)}>Back</button> */}
           </div>
           <div className="MiddleTopSlider">
             <div className="car-logo">
-              <img src={product.images[0]} alt={product.name} className="car" />
+              <img src={product.logo} alt={product.name} className="car" />
             </div>
             <div className="details-text">
               <h1>{product.name}</h1>
