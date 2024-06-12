@@ -25,6 +25,8 @@ const Details = () => {
   const [reviewText, setReviewText] = useState('');
   const [reviewRating, setReviewRating] = useState(5);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [startPickerOpen, setStartPickerOpen] = useState(false);
+  const [endPickerOpen, setEndPickerOpen] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -154,121 +156,18 @@ const Details = () => {
     return <div>Loading...</div>;
   }
 
-
-
-  // <div className="carDetailsTopSlider">
-  //         <div className="SideTopSlider">
-  //          {/* <button className="icon-left" onClick={() => navigate(-1)}>Back</button> */}
-  //         </div>
-  //         <div className="MiddleTopSlider">
-  //           <div className="car-logo">
-  //             <img src={product.logo} alt={product.name} className="car" />
-  //           </div>
-  //           <div className="details-text">
-  //             <h1>{product.name}</h1>
-  //             <p>{product.year}</p>
-  //           </div>
-  //         </div>
-  //         <div className="SideTopSlider rightSideTop">
-  //           <img src={heart} alt="Favorite" className="icon" />
-  //         </div>
-  //   </div>
   return (
     <div className="details-container">
-      <div className="header">
-        <div className="carDetailsCarousel">
-          <div className="custom-carousel">
-            <button className="carousel-control left" onClick={handlePrevImage}>
-              &#10094;
-            </button>
-
-            
-            <div
-              className="carousel-inner"
-              style={{ backgroundImage: `url(${product.images[currentImageIndex]})`}}
-            >
-              <div className="carDetailsTopSlider">
-                <div className="SideTopSlider rightSideTop">
-                </div>
-                <div className="MiddleTopSlider">
-                <div className="car-logo">
-                <img src={product.logo} alt={product.name} className="car" />
-                </div>
-                <div className="details-text">
-                  <h1>{product.name}</h1>
-                  <p>{product.year}</p>
-                </div>
-                </div>
-                <div className="SideTopSlider rightSideTop">
-                  <img src={heart} alt="Favorite" className="icon" />
-                </div>
-              </div>
-            </div>
-
-
-            <button className="carousel-control right" onClick={handleNextImage}>
-              &#10095;
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div className="car-box">
-        <h2 className="car-section">Car Details</h2>
-      </div>
-      
-      <div className="specifications-box">
-        <h3>Specifications</h3>
-        <div className="specifications-details-box">
-          <div className="specifications-text">
-          <p><img src={fuel} alt="Fuel" /> {product.fuel}</p>
-            <p><img src={seat} alt="Seats" /> {product.seats}</p>
-            <p><img src={speed} alt="Top Speed" /> {product.topSpeed}</p>
-            <p><img src={engine} alt="Engine" /> {product.engine}</p>
-            <p><img src={manual} alt="Transmission" /> {product.transmission}</p>
-            <p><img src={aircon} alt="Air Conditioning" /> {product.airConditioning}</p>
-          </div>
-        </div>
-      </div>
-      <div className="reviews-box">
-        <h3>Reviews</h3>
-        <div className="reviews-list">
-          {reviews.map(review => (
-            <div key={review._id} className="review">
-              <p><strong>{review.userId.username}</strong></p>
-              <p>Rating: {review.rating}</p>
-              <p>{review.text}</p>
-            </div>
-          ))}
-        </div>
-        {user && (
-          <div className="review-form">
-            <h4>Leave a Review</h4>
-            <textarea
-              value={reviewText}
-              onChange={(e) => setReviewText(e.target.value)}
-              placeholder="Write your review here"
-            />
-            <select
-              value={reviewRating}
-              onChange={(e) => setReviewRating(parseInt(e.target.value))}
-            >
-              {[1, 2, 3, 4, 5].map(rating => (
-                <option key={rating} value={rating}>{rating}</option>
-              ))}
-            </select>
-            <button onClick={handleReviewSubmit}>Submit Review</button>
-          </div>
-        )}
-      </div>
-      <div className="booking-section">
-        <h2>Booking</h2>
-        <div className="date-picker">
-          <div>
-            <label>Start Date:</label>
+      {/* Date Picker Modal for Start Date */}
+      {startPickerOpen && (
+        <div className="datePickerModal" onClick={() => setStartPickerOpen(false)}>
+          <div className="datePickerContent" onClick={(e) => e.stopPropagation()}>
             <DatePicker
               selected={startDate}
-              onChange={(date) => setStartDate(date)}
+              onChange={(date) => {
+                setStartDate(date);
+                setStartPickerOpen(false);
+              }}
               minDate={new Date()}
               excludeDates={unavailableDates.map(({ startDate, endDate }) => {
                 const start = new Date(startDate);
@@ -281,13 +180,22 @@ const Details = () => {
                 }
                 return dateArray;
               }).flat()}
+              inline
             />
           </div>
-          <div>
-            <label>End Date:</label>
+        </div>
+      )}
+
+      {/* Date Picker Modal for End Date */}
+      {endPickerOpen && (
+        <div className="datePickerModal" onClick={() => setEndPickerOpen(false)}>
+          <div className="datePickerContent" onClick={(e) => e.stopPropagation()}>
             <DatePicker
               selected={endDate}
-              onChange={(date) => setEndDate(date)}
+              onChange={(date) => {
+                setEndDate(date);
+                setEndPickerOpen(false);
+              }}
               minDate={startDate}
               excludeDates={unavailableDates.map(({ startDate, endDate }) => {
                 const start = new Date(startDate);
@@ -300,13 +208,172 @@ const Details = () => {
                 }
                 return dateArray;
               }).flat()}
+              inline
             />
           </div>
         </div>
-        <div className="price">
-          <p>Total Price: ${totalPrice}</p>
+      )}
+
+      <div className="header">
+        <div className="carDetailsCarousel">
+          <div className="custom-carousel">
+            <button className="carousel-control left" onClick={handlePrevImage}>
+              &#10094;
+            </button>
+            
+            <div
+              className="carousel-inner"
+              style={{ backgroundImage: `url(${product.images[currentImageIndex]})`}}
+            >
+              <div className="carDetailsTopSlider">
+                <div className="SideTopSlider rightSideTop">
+                </div>
+                <div className="MiddleTopSlider">
+                  <div className="MiddleTopSliderCont">
+                    <div className="car-logo">
+                      <img src={product.logo} alt={product.name} className="carLogoImage" />
+                    </div>
+                    <div className="details-text">
+                      <h1>{product.name}</h1>
+                      <p>{product.year}</p>
+                    </div> 
+                  </div>
+                </div>
+                <div className="SideTopSlider rightSideTop">
+                  <img src={heart} alt="Favorite" className="icon" />
+                </div>
+              </div>
+            </div>
+
+            <button className="carousel-control right" onClick={handleNextImage}>
+              &#10095;
+            </button>
+          </div>
         </div>
-        <button onClick={handleBooking}>Book Now</button>
+      </div>
+
+      <div className="carBoxSeperator">
+        <h2 className="car-section">Car Details</h2>
+      </div>
+      
+      <div className="specificationsAndReviews">
+        
+        <div className="specificationsBox">
+          <h3>Specifications</h3>
+          <div className="specificationsDetailsBox">
+            <div className="specificationsTextTop">
+              <div className='specificationsTextItem'><img src={fuel} alt="Fuel" /> {product.fuel}</div>
+              <div className='specificationsTextItem'><img src={seat} alt="Seats" /> {product.seats}</div>
+              <div className='specificationsTextItem'><img src={speed} alt="Top Speed" /> {product.topSpeed}</div>
+            </div>
+            <div className="specificationsTextBottom">
+              <div className='specificationsTextItem'><img src={engine} alt="Engine" /> {product.engine}</div>
+              <div className='specificationsTextItem'><img src={manual} alt="Transmission" /> {product.transmission}</div>
+              <div className='specificationsTextItem'><img src={aircon} alt="Air Conditioning" /> {product.airConditioning}</div>
+            </div>
+          </div>
+        </div>
+
+        <div className="reviewsBox">
+          <h3>Reviews</h3>
+          <div className="reviewsBoxCont">
+            <div className="reviewsList">
+              {reviews.map(review => (
+                <div key={review._id} className="review">
+                  <div className="reviewLeft">
+                    <h1>{review.userId.username}:</h1>
+                    <p>{review.text}</p>
+                  </div>
+                  <div className="reviewRight">
+                    <p className='reviewRating'>{review.rating} 
+                      <div className="starRatingRight">
+                        <svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M12.2444 1.35062C12.5717 0.580729 12.7354 0.195785 12.9633 0.0772437C13.1612 -0.0257479 13.3936 -0.0257479 13.5915 0.0772437C13.8193 0.195785 13.983 0.580729 14.3103 1.35062L16.917 7.48288C17.0138 7.71047 17.0622 7.82427 17.1371 7.91141C17.2033 7.98852 17.2843 8.0502 17.3746 8.09242C17.4768 8.14015 17.595 8.15323 17.8313 8.17937L24.1987 8.88408C24.9981 8.97255 25.3977 9.01678 25.5757 9.20739C25.7302 9.37295 25.802 9.60479 25.7698 9.83401C25.7327 10.0979 25.4342 10.38 24.8371 10.9443L20.0807 15.439C19.9043 15.6057 19.8159 15.6892 19.7601 15.7907C19.7106 15.8807 19.6796 15.9805 19.6693 16.0836C19.6576 16.2003 19.6822 16.3221 19.7315 16.566L21.06 23.1337C21.2268 23.9583 21.3102 24.3705 21.1923 24.6068C21.0899 24.8123 20.9018 24.9555 20.684 24.9942C20.4332 25.0386 20.0851 24.8281 19.3887 24.407L13.8424 21.0525C13.6366 20.928 13.5336 20.8659 13.4242 20.8414C13.3274 20.8199 13.2273 20.8199 13.1305 20.8414C13.0211 20.8659 12.9182 20.928 12.7123 21.0525L7.16604 24.407C6.46972 24.8281 6.12156 25.0386 5.87077 24.9942C5.65292 24.9555 5.46485 24.8123 5.36244 24.6068C5.24456 24.3705 5.32795 23.9583 5.49475 23.1337L6.82321 16.566C6.87251 16.3221 6.89717 16.2003 6.88546 16.0836C6.8751 15.9805 6.84418 15.8807 6.79471 15.7907C6.7388 15.6892 6.65053 15.6057 6.47401 15.439L1.71773 10.9443C1.1206 10.38 0.822034 10.0979 0.784912 9.83401C0.752682 9.60479 0.824508 9.37295 0.979073 9.20739C1.15702 9.01678 1.55672 8.97255 2.35612 8.88408L8.72346 8.17937C8.95979 8.15323 9.07794 8.14015 9.18012 8.09242C9.27052 8.0502 9.35146 7.98852 9.4177 7.91141C9.49255 7.82427 9.54093 7.71047 9.63769 7.48288L12.2444 1.35062Z"/>
+                        </svg>
+
+                      </div>
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            {user && (
+              <div className="reviewForm">
+              <h4>Leave a Review</h4>
+              <div className="ReviewAndRating">
+                <textarea
+                  className="reviewTextarea"
+                  value={reviewText}
+                  onChange={(e) => setReviewText(e.target.value)}
+                  placeholder="Write your review here"
+                />
+                <div className="RatingSelector">
+                  <p>Star Rating</p>
+                  <select
+                    className="reviewSelect"
+                    value={reviewRating}
+                    onChange={(e) => setReviewRating(parseInt(e.target.value))}
+                  >
+                    {[1, 2, 3, 4, 5].map(rating => (
+                      <option key={rating} value={rating}>{rating} Stars</option>
+                    ))}
+                  </select>
+                </div>   
+              </div>
+              <button className="reviewButton" onClick={handleReviewSubmit}>Submit Review</button>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+
+      <div className="carBoxSeperator">
+        <h2 className="car-section">Booking</h2>
+      </div>
+
+      <div className="bookingSection">
+
+        <div className="DatesContainer">
+          <h2>Select dates</h2>
+          <div className="datePicker">
+            <div className="datePickerField">
+              <h3>Start Date</h3>
+              <p>Select the date you want to start renting the car</p>
+              <button onClick={() => setStartPickerOpen(!startPickerOpen)}>Start Date</button>
+            </div>
+            <div className="datePickerField">
+              <h3>End Date</h3>
+              <p>Select the date you want to stop renting the car</p>
+              <button onClick={() => setEndPickerOpen(!endPickerOpen)}>End Date</button>
+            </div>
+          </div>
+        </div>
+
+        <div className="QuoteContainer">
+          <h2>Quote</h2>
+          <div className="ThenToWhereCont">
+            <input
+              type="text"
+              value={startDate ? startDate.toDateString() : ''}
+              readOnly
+              placeholder='Start Date'
+            />
+            <p>To</p>
+            <input
+              type="text"
+              value={endDate ? endDate.toDateString() : ''}
+              readOnly
+              placeholder='End Date'
+            />
+          </div>
+          <div className="price">
+            <p>Total Price:</p>
+            <p>${totalPrice}</p>
+          </div>
+          <div className="ButtonQuoteCont"> 
+            <button onClick={handleBooking}>Book Now</button>
+          </div>
+        </div>
       </div>
     </div>
   );

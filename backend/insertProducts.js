@@ -22,6 +22,7 @@ mongoose.connect(MONGO_URI, {
     {
       name: "Tesla Model S",
       year: "2022",
+      brand: "Example",
       logo: "https://example.com/tesla-logo.png",
       images: ['https://example.com/chevrolet-camaro-front.png',
               'https://example.com/chevrolet-camaro-side.png',
@@ -39,7 +40,8 @@ mongoose.connect(MONGO_URI, {
     {
       name: "Porsche 911",
       year: "2019",
-      logo: "https://example.com/tesla-logo.png",
+      brand: "Porsche",
+      logo: "https://pngimg.com/uploads/porsche_logo/porsche_logo_PNG7.png",
       images: ['https://pictures.porsche.com/rtt/iris?COSY-EU-100-1711coMvsi60AAt5FwcmBEgA4qP8iBUDxPE3Cb9pNXkBuNYdMGF4tl3U0%25z8rMHIspMBvMZq6G5OtgSv31nBJaA4qh4NSEGkaW%25cz91wxuzbUUdMGLqk0D3LF%25vUqbxAuWXsOaUJeV6iTrd2zhRc2cUWqA7fQhdiOJUPYyMN9nReCkxo4y7zInhF%25vUqYHPuWXsO5XJeV6iTJ83zhp4NdTxf4KxJhvaBH6mOcuLAlWRDdV2DU',
               'https://pictures.porsche.com/rtt/iris?COSY-EU-100-1711coMvsi60AAt5FwcmBEgA4qP8iBUDxPE3Cb9pNXkBuNYdMGF4tl3U0%25z8rMH1spMBvMZq6G5OtgSv31nBJaA4qh4NSEGkaW%25cz91wxuzbUUdMGLqk0D3LF%25vUqbxAuWXsOaUJeV6iTrd2zhRc2cUWqA7fQhdiOJUPYyMN9nReCkxo4y7zInhF%25vUqYHPuWXsO5XJeV6iTJ83zhp4NdTxf4KxJhvaBH6mOcuLAlWRDdV2DU',
               'https://pictures.porsche.com/rtt/iris?COSY-EU-100-1711coMvsi60AAt5FwcmBEgA4qP8iBUDxPE3Cb9pNXkBuNYdMGF4tl3U0%25z8rMH8spMBvMZq6G5OtgSv31nBJaA4qh4NSEGkaW%25cz91wxuzbUUdMGLqk0D3LF%25vUqbxAuWXsOaUJeV6iTrd2zhRc2cUWqA7fQhdiOJUPYyMN9nReCkxo4y7zInhF%25vUqYHPuWXsO5XJeV6iTJ83zhp4NdTxf4KxJhvaBH6mOcuLAlWRDdV2DU'],

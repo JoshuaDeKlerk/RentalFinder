@@ -20,6 +20,7 @@
   align-items: center;
   width: 100%;
   padding: 0 200px;
+  padding-top: 20px;
 }
 
 .rightSideTop{
@@ -38,6 +39,17 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+.MiddleTopSliderCont{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px 50px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  gap: 10px;
 }
 
 
@@ -65,198 +77,6 @@
   display: flex;
   width: 100%;
   height: 100%;
-}
-
-.icon-left, .icon-right {
-  background: none;
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-  color: #007bff;
-  display: flex;
-  align-items: center;
-}
-
-.icon-left:hover, .icon-right:hover {
-  color: #0056b3;
-}
-
-.icon {
-  width: 30px;
-  height: 30px;
-}
-
-.details-text h1 {
-  font-size: 28px;
-  margin: 0;
-}
-
-.details-text p {
-  font-size: 18px;
-  color: #555;
-  text-align: center;
-}
-
-.car-logo img {
-  width: 100px;
-  height: auto;
-  border-radius: 10px;
-}
-
-.specifications-box, .reviews-box {
-  margin: 20px 0;
-}
-
-.car-box{
-  width: 100%;
-  height: 10vh;
-  background: url('../assets/images/separator.svg');
-}
-.car-section{
-  color: white;
-  text-align: center;
-  padding-top: 25px;
-  margin-bottom: 60px;
-}
-
-.specifications-text, h3 {
-  margin-bottom: 10px;
-  font-size: 24px;
-}
-
-.booking {
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.booking h3 {
-  margin-bottom: 20px;
-}
-
-.date-picker-container {
-  margin-bottom: 20px;
-}
-
-.date-picker {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-.total-price {
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-
-.book-btn {
-  background-color: #28a745;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
-  width: 100%;
-}
-
-.book-btn:hover {
-  background-color: #218838;
-}
-
-.specifications-details-box {
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.specifications-text p {
-  margin: 5px 0;
-}
-
-.reviews-box {
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.reviews-list {
-  margin-top: 20px;
-}
-
-.review {
-  display: flex;
-  align-items: flex-start;
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-}
-
-.review:last-child {
-  border-bottom: none;
-}
-
-.review-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.review-profile-pic {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
-.review-form {
-  margin-top: 20px;
-}
-
-.review-form h4 {
-  margin-bottom: 10px;
-}
-
-.review-form label {
-  display: block;
-  margin: 10px 0 5px;
-}
-
-.review-form select, .review-form textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-.submit-review-btn {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
-  margin-top: 10px;
-}
-
-.submit-review-btn:hover {
-  background-color: #0056b3;
-}
-
-.about {
-  text-align: center;
-  margin-top: 50px;
-}
-
-.about h2 {
-  font-size: 24px;
-}
-
-.about p {
-  font-size: 16px;
-  color: #555;
 }
 
 .custom-carousel {
@@ -297,4 +117,450 @@
 
 .carousel-control:hover {
   color: #000;
+}
+
+.car-logo{
+  width: 120px;
+  height: 70px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #E9E9E9;
+  border-radius: 50px;
+}
+
+.carLogoImage{
+  height: 100%;
+}
+
+
+.icon-left:hover, .icon-right:hover {
+  color: #0056b3;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+}
+
+.details-text h1 {
+  font-size: 38px;
+  margin: 0;
+  font-weight: 800;
+  text-align: center;
+}
+
+.details-text p {
+  font-size: 25px;
+  color: #2d2d2d;
+  text-align: center;
+  margin: 0;
+}
+
+.carBoxSeperator{
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('../assets/images/separator.svg');
+}
+
+.car-section{
+  color: white;
+  text-align: center;
+}
+
+/* Specification And Reviews */
+
+.specificationsAndReviews{
+  display: flex;
+  padding: 20px 200px;
+  width: 100%;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Specification */
+
+.specificationsBox{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  gap: 20px;
+}
+
+.specificationsBox h3{
+  font-size: 30px;
+}
+
+.specificationsDetailsBox{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.specificationsTextTop{
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  height: 50%;
+}
+
+.specificationsTextBottom{
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  height: 50%;
+}
+
+.specificationsTextItem{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 33%;
+  gap: 10px;
+  padding: 20px 10px;
+  background-color: #E9E9E9;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 10px;
+  height: 100%;
+}
+
+.specificationsTextItem img{
+  height: 50px;
+}
+
+/* Review */
+
+.reviewsBox{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  gap: 20px;
+}
+
+.reviewsBox h3{
+  font-size: 30px;
+}
+
+.reviewsBoxCont{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: 10px;
+}
+
+/* Review List */
+.reviewsList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  max-height: 220px;
+  overflow-y: auto;
+  padding: 10px; 
+}
+
+.review {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid #ddd;
+  padding: 6px 0;
+}
+
+.reviewLeft{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.reviewLeft h1{
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.reviewLeft p{
+  font-size: 18px;
+  margin: 0;
+  color: #000;
+}
+
+.reviewRight{
+  display: flex;
+  align-items: center;
+}
+
+.reviewRight p{
+  color: #0056b3;
+  font-size: 18px;
+  margin: 0;
+}
+
+.reviewRating{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.starRatingRight{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.starRatingRight svg{
+  fill: #0056b3;
+  height: 20px;
+  margin-bottom: 3px;
+}
+
+/* Review Form */
+
+.reviewForm {
+  color: #000;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reviewForm h4 {
+  font-size: 24px;
+  text-align: start;
+
+}
+
+.ReviewAndRating{
+  display: flex;
+  gap: 20px;
+}
+
+.reviewTextarea {
+  width: 75%;
+  height: 80px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #0056b3;
+  background-color: #E9E9E9;
+  color: #000;
+  font-size: 16px;
+  resize: vertical;
+}
+
+.RatingSelector{
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.RatingSelector p{
+  font-size: 25px;
+  color: #000;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.reviewSelect {
+  width: 120px;
+  padding: 10px;
+  border-radius: 50px;
+  border: 1px solid #0056b3;
+  background-color: #E9E9E9;
+  color: #000;
+  font-size: 16px;
+}
+
+.reviewButton {
+  width: 100%;
+  padding: 10px;
+  border-radius: 50px;
+  border: none;
+  background-color: #0056b3;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.reviewButton:hover {
+  background-color: #2d2d2d;
+}
+
+/* Booking */
+
+.bookingSection{
+  padding: 20px 200px;
+  height: 70vh;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+/* Dates Container */
+.DatesContainer{
+  width: 50%;
+  height: 100%;
+  background-color: #E9E9E9;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+  border-radius: 20px;
+}
+
+.datePickerModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.datePickerContent {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  z-index: 1001;
+}
+
+.datePicker{
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.datePickerField{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.datePickerField h3{
+  color: #000;
+  font-size: 25px;
+}
+
+.datePickerField p{
+  color: #000;
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+.datePickerField button{
+  width: 180px;
+  padding: 12px;
+  background-color: #0056b3;
+  border: none;
+  color: #fff;
+  border-radius: 50px;
+  font-size: 18px;
+  margin: 0;
+}
+
+
+/* Quote Container */
+.QuoteContainer{
+  width: 50%;
+  height: 100%;
+  background-color: #E9E9E9;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+  border-radius: 20px;
+}
+
+.ThenToWhereCont{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ThenToWhereCont input {
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  border: none;
+  border-radius: 50px;
+  background-color: #0056b3;
+  color: #E9E9E9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.ThenToWhereCont input::placeholder {
+  color: white; 
+  opacity: 1;
+}
+
+.ThenToWhereCont p{
+  font-size: 20px;
+  color: #000;
+  font-weight: 500;
+  text-align: center;
+}
+
+.price{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 500px;
+  background-color: white;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.price p{
+  font-size: 20px;
+  color: #000;
+}
+
+.ButtonQuoteCont{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.QuoteContainer button{
+  padding: 15px 80px;
+  border-radius: 500px;
+  font-size: 20px;
+  font-weight: 600;
+  background-color: #2d2d2d;
+  color: white;
+  border: none;
 }

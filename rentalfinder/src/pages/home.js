@@ -16,7 +16,7 @@ const Home = () => {
       try {
         const response = await axios.get('http://localhost:5000/products');
         setProducts(response.data);
-        setBrands([...new Set(response.data.map(product => product.name))]);
+        setBrands([...new Set(response.data.map(product => product.brand))]);
         setLocations([...new Set(response.data.map(product => product.location))]);
       } catch (err) {
         console.error(err);
@@ -43,7 +43,7 @@ const Home = () => {
 
   const filteredProducts = products.filter(product => {
     return (
-      (selectedBrand ? product.name === selectedBrand : true) &&
+      (selectedBrand ? product.brand === selectedBrand : true) &&
       (selectedLocation ? product.location === selectedLocation : true) &&
       product.price >= priceRange.min &&
       product.price <= priceRange.max
