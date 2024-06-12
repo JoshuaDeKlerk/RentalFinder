@@ -9,7 +9,7 @@ const Home = () => {
   const [locations, setLocations] = useState([]);
   const [selectedBrand, setSelectedBrand] = useState('');
   const [selectedLocation, setSelectedLocation] = useState('');
-  const [priceRange, setPriceRange] = useState({ min: 0, max: 10000 });
+  const [priceRange, setPriceRange] = useState({ min: 0, max: 100000 });
 
   useEffect(() => {
     const loadProducts = async () => {

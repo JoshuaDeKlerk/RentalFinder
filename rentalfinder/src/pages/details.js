@@ -223,7 +223,12 @@ const Details = () => {
             
             <div
               className="carousel-inner"
-              style={{ backgroundImage: `url(${product.images[currentImageIndex]})`}}
+              style={{ 
+                backgroundImage: `url(${product.images[currentImageIndex]})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center', // This ensures the image is centered
+                backgroundRepeat: 'no-repeat' // This prevents the image from repeating
+              }}
             >
               <div className="carDetailsTopSlider">
                 <div className="SideTopSlider rightSideTop">

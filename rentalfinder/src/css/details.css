@@ -122,11 +122,9 @@
 .car-logo{
   width: 120px;
   height: 70px;
-  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #E9E9E9;
   border-radius: 50px;
 }
 

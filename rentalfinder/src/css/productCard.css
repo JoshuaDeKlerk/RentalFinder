@@ -1,11 +1,56 @@
-/* src/css/productCard.css */
-.product-card {
+/* product Card */
+
+.productCard{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 5.889px 5.889px 0px rgba(0, 0, 0, 0.25);
+}
+
+.cardTop{
+  height: 200px;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.cardBottom{
+  padding: 10px;
+}
+
+.productCardInfo h2{
+  font-size: 20px;
+}
+
+.productCardInfo p{
+  font-size: 15px;
+  color: black;
+}
+
+.cardBottomBoxInfo{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 2px solid rgba(0, 0, 0, 0.60);
+}
+
+.CardItemInfo{
+  display: flex;
+  gap: 10px;
+}
+
+/* .product-card {
   border: 1px solid #ddd;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
-  width: 300px; /* Adjusted width for card */
+  width: 100px; 
   display: flex;
   flex-direction: column;
 }
@@ -16,7 +61,7 @@
 
 .product-image {
   width: 100%;
-  height: 200px;
+  height: 50px;
   object-fit: cover;
 }
 
@@ -141,7 +186,7 @@
 .divider {
   border: none;
   border-top: 2px solid #555; /* Darker line */
-  margin: 10px 0;
+  /* margin: 10px 0;
 }
 
 .product-icons {
@@ -176,4 +221,4 @@
 
 .details-button:hover {
   background-color: #0056b3;
-}
+} */ 

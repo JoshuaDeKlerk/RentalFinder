@@ -40,7 +40,56 @@ const ProductCard = ({ product, onFavoriteToggle }) => {
   };
 
   return (
-    <div className="product-card">
+    <>
+    <div className="productCard" onClick={handleDetailsClick}>
+
+      <div className="cardTop" style={{ backgroundImage: `url(${product.images[0]})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center', // This ensures the image is centered
+    }}>
+        <div className="reviewStars">
+          <div className="rating">
+            <FaStar />
+            <FaStar />
+            <FaStar />
+            <FaStar />
+            <FaStar />
+          </div>
+        </div>
+        <div className="favoriteIcon">
+          {isFavorite ? (
+            <AiFillHeart className="heartIcon favorite" onClick={toggleFavorite} />
+          ) : (
+            <AiOutlineHeart className="heartIcon" onClick={toggleFavorite} />
+          )}
+        </div>
+      </div>
+
+      <div className="cardBottom">
+        <div className="productCardInfo">
+          <h2>{product.name}</h2>
+          <p>{product.year}</p>
+          <div className="cardBottomBoxInfo">
+            <div className="locationInfo CardItemInfo">
+              <FiMapPin />
+              <p>{product.location}</p>
+            </div>
+            <div className="gearboxInfo CardItemInfo">
+              <GiGearStickPattern />
+              <p>{product.transmission}</p>
+            </div>
+            <div className="priceInfo CardItemInfo">
+              <h4>{product.price}</h4>
+              <p>/day</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    {/* <div className="product-card">
       <div className="card-header">
         <div className="rating">
           <FaStar color="gold" />
@@ -48,7 +97,6 @@ const ProductCard = ({ product, onFavoriteToggle }) => {
           <FaStar color="gold" />
           <FaStar color="gold" />
           <FaStar color="gold" />
-          <p>{product.reviews} Reviews</p>
         </div>
         {isFavorite ? (
           <AiFillHeart className="heart-icon favorite" onClick={toggleFavorite} />
@@ -72,7 +120,8 @@ const ProductCard = ({ product, onFavoriteToggle }) => {
         </div>
         <button onClick={handleDetailsClick}>Details</button>
       </div>
-    </div>
+    </div> */}
+    </>
   );
 };
 
