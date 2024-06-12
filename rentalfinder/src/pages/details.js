@@ -5,18 +5,13 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { AuthContext } from '../context/AuthContext';
 import '../css/details.css';
-import Carousel from 'react-bootstrap/Carousel';
-import car from '../assets/images/car.svg';
-import car1 from '../assets/images/car1.svg';
-import car2 from '../assets/images/car2.svg';
-import Button from 'react-bootstrap/Button';
 import fuel from '../assets/images/fuel.svg';
 import speed from '../assets/images/speed.svg';
 import seat from '../assets/images/seat.svg';
 import engine from '../assets/images/engine.svg';
 import manual from '../assets/images/manual.svg';
 import aircon from '../assets/images/aircon.svg';
-import heart from '../assets/icons/heart.svg'
+import heart from '../assets/icons/heart.svg';
 
 const Details = () => {
   const { id } = useParams();
@@ -29,6 +24,7 @@ const Details = () => {
   const [reviews, setReviews] = useState([]);
   const [reviewText, setReviewText] = useState('');
   const [reviewRating, setReviewRating] = useState(5);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -144,44 +140,77 @@ const Details = () => {
     }
   };
 
+  const handleNextImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % product.images.length);
+  };
+
+  const handlePrevImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? product.images.length - 1 : prevIndex - 1
+    );
+  };
+
   if (!product) {
     return <div>Loading...</div>;
   }
 
+
+
+  // <div className="carDetailsTopSlider">
+  //         <div className="SideTopSlider">
+  //          {/* <button className="icon-left" onClick={() => navigate(-1)}>Back</button> */}
+  //         </div>
+  //         <div className="MiddleTopSlider">
+  //           <div className="car-logo">
+  //             <img src={product.logo} alt={product.name} className="car" />
+  //           </div>
+  //           <div className="details-text">
+  //             <h1>{product.name}</h1>
+  //             <p>{product.year}</p>
+  //           </div>
+  //         </div>
+  //         <div className="SideTopSlider rightSideTop">
+  //           <img src={heart} alt="Favorite" className="icon" />
+  //         </div>
+  //   </div>
   return (
     <div className="details-container">
       <div className="header">
-        <div className="carDetailsTopSlider">
-          <div className="SideTopSlider">
-           {/* <button className="icon-left" onClick={() => navigate(-1)}>Back</button> */}
-          </div>
-          <div className="MiddleTopSlider">
-            <div className="car-logo">
-              <img src={product.logo} alt={product.name} className="car" />
+        <div className="carDetailsCarousel">
+          <div className="custom-carousel">
+            <button className="carousel-control left" onClick={handlePrevImage}>
+              &#10094;
+            </button>
+
+            
+            <div
+              className="carousel-inner"
+              style={{ backgroundImage: `url(${product.images[currentImageIndex]})`}}
+            >
+              <div className="carDetailsTopSlider">
+                <div className="SideTopSlider rightSideTop">
+                </div>
+                <div className="MiddleTopSlider">
+                <div className="car-logo">
+                <img src={product.logo} alt={product.name} className="car" />
+                </div>
+                <div className="details-text">
+                  <h1>{product.name}</h1>
+                  <p>{product.year}</p>
+                </div>
+                </div>
+                <div className="SideTopSlider rightSideTop">
+                  <img src={heart} alt="Favorite" className="icon" />
+                </div>
+              </div>
             </div>
-            <div className="details-text">
-              <h1>{product.name}</h1>
-              <p>{product.year}</p>
-            </div>
-          </div>
-          <div className="SideTopSlider rightSideTop">
-            <img src={heart} alt="Favorite" className="icon" />
+
+
+            <button className="carousel-control right" onClick={handleNextImage}>
+              &#10095;
+            </button>
           </div>
         </div>
-        <div className="carDetailsBottom">
-          <Carousel data-bs-theme="dark">
-            <Carousel.Item>
-              <img className="carImageCarousel" src={car} alt="First slide" />
-            </Carousel.Item>
-            <Carousel.Item>
-              <img className="carImageCarousel" src={car1} alt="Second slide" />
-            </Carousel.Item>
-            <Carousel.Item>
-              <img className="carImageCarousel" src={car2} alt="Third slide" />
-            </Carousel.Item>
-          </Carousel>
-        </div>
-        
       </div>
 
       <div className="car-box">

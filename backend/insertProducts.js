@@ -23,7 +23,9 @@ mongoose.connect(MONGO_URI, {
       name: "Tesla Model S",
       year: "2022",
       logo: "https://example.com/tesla-logo.png",
-      images: ['https://www.pngall.com/wp-content/uploads/11/Tesla-Model-S-PNG-Image-HD.png'],
+      images: ['https://example.com/chevrolet-camaro-front.png',
+              'https://example.com/chevrolet-camaro-side.png',
+              'https://example.com/chevrolet-camaro-back.png'],
       fuel: "Electric",
       seats: "Five Seaters",
       topSpeed: "322 km/h",
@@ -38,7 +40,9 @@ mongoose.connect(MONGO_URI, {
       name: "Porsche 911",
       year: "2019",
       logo: "https://example.com/tesla-logo.png",
-      images: ["https://via.placeholder.com/400"],
+      images: ['https://pictures.porsche.com/rtt/iris?COSY-EU-100-1711coMvsi60AAt5FwcmBEgA4qP8iBUDxPE3Cb9pNXkBuNYdMGF4tl3U0%25z8rMHIspMBvMZq6G5OtgSv31nBJaA4qh4NSEGkaW%25cz91wxuzbUUdMGLqk0D3LF%25vUqbxAuWXsOaUJeV6iTrd2zhRc2cUWqA7fQhdiOJUPYyMN9nReCkxo4y7zInhF%25vUqYHPuWXsO5XJeV6iTJ83zhp4NdTxf4KxJhvaBH6mOcuLAlWRDdV2DU',
+              'https://pictures.porsche.com/rtt/iris?COSY-EU-100-1711coMvsi60AAt5FwcmBEgA4qP8iBUDxPE3Cb9pNXkBuNYdMGF4tl3U0%25z8rMH1spMBvMZq6G5OtgSv31nBJaA4qh4NSEGkaW%25cz91wxuzbUUdMGLqk0D3LF%25vUqbxAuWXsOaUJeV6iTrd2zhRc2cUWqA7fQhdiOJUPYyMN9nReCkxo4y7zInhF%25vUqYHPuWXsO5XJeV6iTJ83zhp4NdTxf4KxJhvaBH6mOcuLAlWRDdV2DU',
+              'https://pictures.porsche.com/rtt/iris?COSY-EU-100-1711coMvsi60AAt5FwcmBEgA4qP8iBUDxPE3Cb9pNXkBuNYdMGF4tl3U0%25z8rMH8spMBvMZq6G5OtgSv31nBJaA4qh4NSEGkaW%25cz91wxuzbUUdMGLqk0D3LF%25vUqbxAuWXsOaUJeV6iTrd2zhRc2cUWqA7fQhdiOJUPYyMN9nReCkxo4y7zInhF%25vUqYHPuWXsO5XJeV6iTJ83zhp4NdTxf4KxJhvaBH6mOcuLAlWRDdV2DU'],
       fuel: "Petrol",
       seats: "Two Seaters",
       topSpeed: "310 km/h",
@@ -471,12 +475,23 @@ mongoose.connect(MONGO_URI, {
     }
   ];
 
- try {
-    const insertedProducts = await Product.insertMany(products);
-    console.log('Data inserted:', insertedProducts);
+  try {
+    for (const product of products) {
+      const existingProduct = await Product.findOne({ name: product.name });
+      if (existingProduct) {
+        // Update the existing product
+        await Product.updateOne({ name: product.name }, product);
+        console.log(`Updated product: ${product.name}`);
+      } else {
+        // Insert the new product
+        const newProduct = new Product(product);
+        await newProduct.save();
+        console.log(`Inserted product: ${product.name}`);
+      }
+    }
     mongoose.connection.close();
   } catch (err) {
-    console.error('Error inserting products:', err);
+    console.error('Error inserting or updating products:', err);
     mongoose.connection.close();
   }
 })
