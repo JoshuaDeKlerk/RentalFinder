@@ -148,4 +148,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Demo Recording
 
-[Demo Vid]()
+[Demo Vid](https://drive.google.com/file/d/1V_Bio7-vWirczDP8M2kCATpgRIg2lBjI/view?usp=sharing)
