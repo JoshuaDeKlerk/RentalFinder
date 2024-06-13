@@ -1,4 +1,4 @@
-// src/components/BookingForm.js
+//rentalfinder/src/components/BookingForm.js
 import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import DatePicker from 'react-datepicker';

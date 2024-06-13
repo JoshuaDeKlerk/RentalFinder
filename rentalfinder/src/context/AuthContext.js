@@ -1,3 +1,4 @@
+// rentalfinder/src/context/AuthContext.js
 import React, { createContext, useState, useEffect } from 'react';
 
 const AuthContext = createContext();
@@ -22,6 +23,14 @@ const AuthProvider = ({ children }) => {
     setUser(null);
   };
 
+  const updateUserFavorites = (favorites) => {
+    if (user) {
+      const updatedUser = { ...user, favorites };
+      sessionStorage.setItem('user', JSON.stringify(updatedUser));
+      setUser(updatedUser);
+    }
+  };
+
   const updateProfilePicture = (profilePicture) => {
     if (user) {
       const updatedUser = { ...user, profilePicture };
@@ -31,13 +40,14 @@ const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, updateProfilePicture }}>
+    <AuthContext.Provider value={{ user, login, logout, updateUserFavorites, updateProfilePicture }}>
       {children}
     </AuthContext.Provider>
   );
 };
 
 export { AuthContext, AuthProvider };
+
 
 
 

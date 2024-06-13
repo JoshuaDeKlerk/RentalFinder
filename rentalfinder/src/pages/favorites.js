@@ -1,3 +1,4 @@
+// rentalfinder/src/pages/favorites.js
 import React, { useContext, useEffect, useState } from 'react';
 import ProductCard from '../components/ProductCard';
 import { AuthContext } from '../context/AuthContext';
@@ -11,10 +12,8 @@ const Favorites = () => {
   useEffect(() => {
     const fetchFavorites = async () => {
       try {
-        const responses = await Promise.all(
-          user.favorites.map(productId => axios.get(`http://localhost:5000/products/${productId}`))
-        );
-        setFavoriteProducts(responses.map(res => res.data));
+        const response = await axios.get(`http://localhost:5000/favorites/${user._id}`);
+        setFavoriteProducts(response.data);
       } catch (error) {
         console.error('Error fetching favorite products:', error);
       }
@@ -50,3 +49,5 @@ const Favorites = () => {
 };
 
 export default Favorites;
+
+

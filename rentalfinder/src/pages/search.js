@@ -1,3 +1,5 @@
+//rentalfinder/src/pages/search.js
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import ProductCard from '../components/ProductCard';

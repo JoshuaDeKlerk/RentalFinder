@@ -1,3 +1,5 @@
+//rentalfinder/src/components/CheckoutModals.js
+
 import React from 'react';
 import './componentCSS/CheckoutModals.css';
 

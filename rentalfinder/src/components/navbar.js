@@ -1,4 +1,4 @@
-// src/pages/navbar.js
+// rentalfinder/src/components/Navbar.js
 import React, { useContext, useState } from 'react';
 import './componentCSS/navbar.css';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -136,6 +136,7 @@ function NavBar({ isDark, setIsDark }) {
 }
 
 export default NavBar;
+
 
 
 

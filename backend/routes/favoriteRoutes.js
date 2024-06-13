@@ -1,6 +1,7 @@
 // backend/routes/favoriteRoutes.js
 import express from 'express';
 import User from '../models/User.js';
+import Product from '../models/Product.js';
 
 const router = express.Router();
 
@@ -38,7 +39,25 @@ router.post('/remove', async (req, res) => {
   }
 });
 
+// Get favorite products
+router.get('/:userId', async (req, res) => {
+  const { userId } = req.params;
+  try {
+    const user = await User.findById(userId).populate('favorites');
+    if (!user) return res.status(404).json({ message: 'User not found' });
+
+    const favoriteProducts = await Product.find({ _id: { $in: user.favorites } });
+    res.status(200).json(favoriteProducts);
+  } catch (err) {
+    res.status(500).json({ message: 'Error fetching favorite products', error: err.message });
+  }
+});
+
 export default router;
+
+
+
+
 
 
 

@@ -1,3 +1,4 @@
+// rentalfinder/src/pages/details.js
 import React, { useState, useEffect, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -11,11 +12,11 @@ import seat from '../assets/images/seat.svg';
 import engine from '../assets/images/engine.svg';
 import manual from '../assets/images/manual.svg';
 import aircon from '../assets/images/aircon.svg';
-import heart from '../assets/icons/heart.svg';
+import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 
 const Details = () => {
   const { id } = useParams();
-  const { user } = useContext(AuthContext);
+  const { user, updateUserFavorites } = useContext(AuthContext);
   const [product, setProduct] = useState(null);
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
@@ -113,7 +114,7 @@ const Details = () => {
         }
       });
       alert(response.data.message);
-      navigate('/bookings'); // Navigate to the bookings page
+      navigate('/bookings');
     } catch (error) {
       console.error('Error making booking:', error);
       alert(error.response?.data.message || 'Error making booking');
@@ -147,9 +148,27 @@ const Details = () => {
   };
 
   const handlePrevImage = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === 0 ? product.images.length - 1 : prevIndex - 1
-    );
+    setCurrentImageIndex((prevIndex) => prevIndex === 0 ? product.images.length - 1 : prevIndex - 1);
+  };
+
+  const toggleFavorite = async () => {
+    if (!user) {
+      alert('Please sign in to add favorites');
+      return;
+    }
+
+    try {
+      if (user.favorites.includes(product._id)) {
+        await axios.post('http://localhost:5000/favorites/remove', { userId: user._id, productId: product._id });
+        updateUserFavorites(user.favorites.filter(fav => fav !== product._id));
+      } else {
+        await axios.post('http://localhost:5000/favorites/add', { userId: user._id, productId: product._id });
+        updateUserFavorites([...user.favorites, product._id]);
+      }
+    } catch (error) {
+      console.error('Error updating favorites:', error);
+      alert('Error updating favorites');
+    }
   };
 
   if (!product) {
@@ -158,7 +177,6 @@ const Details = () => {
 
   return (
     <div className="details-container">
-      {/* Date Picker Modal for Start Date */}
       {startPickerOpen && (
         <div className="datePickerModal" onClick={() => setStartPickerOpen(false)}>
           <div className="datePickerContent" onClick={(e) => e.stopPropagation()}>
@@ -186,7 +204,6 @@ const Details = () => {
         </div>
       )}
 
-      {/* Date Picker Modal for End Date */}
       {endPickerOpen && (
         <div className="datePickerModal" onClick={() => setEndPickerOpen(false)}>
           <div className="datePickerContent" onClick={(e) => e.stopPropagation()}>
@@ -226,13 +243,12 @@ const Details = () => {
               style={{ 
                 backgroundImage: `url(${product.images[currentImageIndex]})`,
                 backgroundSize: 'cover',
-                backgroundPosition: 'center', // This ensures the image is centered
-                backgroundRepeat: 'no-repeat' // This prevents the image from repeating
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
               }}
             >
               <div className="carDetailsTopSlider">
-                <div className="SideTopSlider rightSideTop">
-                </div>
+                <div className="SideTopSlider rightSideTop"></div>
                 <div className="MiddleTopSlider">
                   <div className="MiddleTopSliderCont">
                     <div className="car-logo">
@@ -244,8 +260,12 @@ const Details = () => {
                     </div> 
                   </div>
                 </div>
-                <div className="SideTopSlider rightSideTop">
-                  <img src={heart} alt="Favorite" className="icon" />
+                <div className="SideTopSlider rightSideTop" onClick={toggleFavorite}>
+                  {user?.favorites?.includes(product._id) ? (
+                    <AiFillHeart className="heartIcon favorite" />
+                  ) : (
+                    <AiOutlineHeart className="heartIcon" />
+                  )}
                 </div>
               </div>
             </div>
@@ -262,7 +282,6 @@ const Details = () => {
       </div>
       
       <div className="specificationsAndReviews">
-        
         <div className="specificationsBox">
           <h3>Specifications</h3>
           <div className="specificationsDetailsBox">
@@ -337,7 +356,6 @@ const Details = () => {
       </div>
 
       <div className="bookingSection">
-
         <div className="DatesContainer">
           <h2>Select dates</h2>
           <div className="datePicker">
@@ -385,3 +403,4 @@ const Details = () => {
 };
 
 export default Details;
+

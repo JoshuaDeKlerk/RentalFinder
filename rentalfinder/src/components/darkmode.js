@@ -1,4 +1,4 @@
-// src/components/darkmode.js
+//rentalfinder/src/components/darkmode.js
 import './componentCSS/darkMode.css';
 
 export const DarkMode = ({ handleChange, isChecked}) => {
