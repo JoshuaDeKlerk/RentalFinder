@@ -4,9 +4,9 @@
 
 * [About the Project](#about-the-project)
    * [Home, Sign In and Sign Up](#home-sign-in-and-sign-up)
-   * [Search](#search)
-   * [Create Items](#create-items)
-   * [Edit Items](#edit-items)
+   * [Home](#home)
+   * [ Search Favorites Booking](#search-favorites-booking)
+   * [Details](#details-page)
 * [Getting Started](#getting-started)
   * [Backend](#backend)
   * [Frontend](#frontend)
@@ -32,15 +32,15 @@ Term 2 showed a change in attention to MongoDB proficiency and efficient user da
 
 ### Home
 
-![Search](./rentalfinder/src/assets/mockups/MockUp2.png)
+![Home](./rentalfinder/src/assets/mockups/MockUp2.png)
 
 ### Search Favorites Booking
 
-![Details](./rentalfinder/src/assets/mockups/MockUp3.png)
+![Search Favorites Booking](./rentalfinder/src/assets/mockups/MockUp3.png)
 
 ### Details Page
 
-![Details](./rentalfinder/src/assets/mockups/MockUp4.png)
+![Details Page](./rentalfinder/src/assets/mockups/MockUp4.png)
 
 
 ## Getting Started
