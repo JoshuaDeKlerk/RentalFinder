@@ -1,8 +1,8 @@
 /* src/css/search.css */
 
 .search-page {
-  padding: 20px;
   background-color: #f0f2f5;
+  padding: 20px 200px;
 }
 
 .filter-bar {
@@ -18,7 +18,7 @@
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 50px;
   width: 200px;
 }
 
@@ -38,11 +38,9 @@
 
 .product-list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Adjusted for four columns */
+  grid-template-columns: repeat(3, 1fr); /* Adjusted for four columns */
   gap: 20px;
   justify-items: center;
-  padding: 20px;
-  margin: 0 auto;
 }
 
 @media (max-width: 1200px) {

@@ -1,10 +1,31 @@
 .bookings {
   width: 100%;
-  padding: 20px;
-  background-color: #f0f2f5; /* Light background for modern look */
+  background-color: #f0f2f5; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
-.bookings h2 {
+.total-price{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px;
+  background-color: #333;
+  color: white;
+  align-items: center;
+  border-radius: 50px;
+  font-size: 25px;
+}
+
+.bookingsCont{
+  padding: 20px 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.buttonsBooking h2 {
   font-size: 36px;
   margin-bottom: 20px;
   text-align: center; /* Center the section title */
@@ -15,14 +36,18 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
+  width: 100%;
 }
 
 .booking-card {
   position: relative;
-  width: 300px;
   border: 1px solid #ddd;
   border-radius: 10px;
+  width: 32%;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   background-color: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -35,21 +60,61 @@
 
 .booking-card img {
   width: 100%;
-  height: 150px;
+  height: 200px;
   object-fit: cover;
 }
 
 .booking-info {
   padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.booking-card h3 {
-  font-size: 22px;
-  margin: 10px 0;
+.booking-card h3{
+  font-size: 25px;
 }
 
-.booking-card p {
-  margin: 5px 0;
+.DatesCont{
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.DateCont{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+  background-color: #0056b3;
+  border-radius: 10px;
+}
+
+.DateCont h1{
+  font-size: 20px;
+  margin: 0;
+  color: white;
+}
+
+.DateCont p{
+  font-size: 20px;
+  margin: 0;
+  color: white;
+}
+
+.totalPrice{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #efefef;
+  border-radius: 500px;
+}
+
+.totalPrice p{
+  font-size: 20px;
+  color: black;
 }
 
 .booking-card button {
@@ -66,16 +131,19 @@
   background-color: #ff2a3b;
 }
 
-.checkout-button {
-  display: block;
+.buttonsBooking{
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.buttonsBooking button{
+  display: flex;
   width: 100%;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  text-align: center;
-  border-radius: 5px;
-  text-decoration: none;
-  margin-top: 10px;
+  align-items: center;
+  justify-content: center;
+  background-color: #333;
+  border-radius: 500px;
 }
 
 .checkout-button:hover {

@@ -95,11 +95,12 @@ body {
 .EmailForm,
 .PasswordForm {
     width: 40vw;
+    height: 20px;
     background-color: var(--secondary-background-color);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2.5vh 8vh;
+    padding: 10px 8vh;
     border-radius: 50px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }

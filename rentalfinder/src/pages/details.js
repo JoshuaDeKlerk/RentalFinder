@@ -391,13 +391,18 @@ const Details = () => {
           </div>
           <div className="price">
             <p>Total Price:</p>
-            <p>${totalPrice}</p>
+            <p>R{totalPrice}</p>
           </div>
           <div className="ButtonQuoteCont"> 
             <button onClick={handleBooking}>Book Now</button>
           </div>
         </div>
       </div>
+      <footer className="footer">
+        <div className="footer-content">
+          <div>&copy; 2024 RentalFinder. All rights reserved.</div>
+        </div>
+      </footer>
     </div>
   );
 };

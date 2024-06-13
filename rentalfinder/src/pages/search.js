@@ -53,6 +53,7 @@ const Search = () => {
   };
 
   return (
+    <>
     <div className="search-page">
       <div className="filter-bar">
         <input
@@ -77,11 +78,10 @@ const Search = () => {
           {/* Add more options as needed */}
         </select>
         <div className="price-range">
-          <label>Price Range:</label>
           <input
             type="range"
             min="0"
-            max="10000"
+            max="30000"
             step="100"
             value={priceRange[0]}
             onChange={e => setPriceRange([Number(e.target.value), priceRange[1]])}
@@ -89,7 +89,7 @@ const Search = () => {
           <input
             type="range"
             min="0"
-            max="10000"
+            max="30000"
             step="100"
             value={priceRange[1]}
             onChange={e => setPriceRange([priceRange[0], Number(e.target.value)])}
@@ -105,6 +105,12 @@ const Search = () => {
         ))}
       </div>
     </div>
+    <footer className="footer">
+    <div className="footer-content">
+      <div>&copy; 2024 RentalFinder. All rights reserved.</div>
+    </div>
+  </footer>
+  </>
   );
 };
 

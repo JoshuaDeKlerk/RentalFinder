@@ -52,20 +52,6 @@ function SignUp() {
             <div className='LoginTitleCont'>
               Sign Up for an Account
             </div>
-            <div className='LoginSubtitleCont'>
-              Sign up using social networks
-            </div>
-            <div className='LoginSocialsCont'>
-              <div className='socials'>
-                <img src={Google} alt="Google" style={{ width: '100%' }} />
-              </div>
-              <div className='socials'>
-                <img src={Facebook} alt="Facebook" style={{ width: '100%' }} />
-              </div>
-            </div>
-            <div className='LoginSeparatorCont'>
-              OR
-            </div>
           </div>
           <form onSubmit={handleSubmit(handleSignUp)}>
             <div className='LogInFormCont'>
@@ -78,9 +64,6 @@ function SignUp() {
                   />
                 </div>
                 <p>{errors.username?.message}</p>
-                <div className='Icons'>
-                  <img src={EmailIcon} alt="Username" style={{ width: '100%' }} />
-                </div>
               </div>
               <div className='EmailFormCont'>
                 <div className='InputEmail'>
@@ -130,9 +113,6 @@ function SignUp() {
                   />
                 </div>
                 <p>{errors.id?.message}</p>
-                <div className='Icons'>
-                  <img src={EmailIcon} alt="ID" style={{ width: '100%' }} />
-                </div>
               </div>
               <div className='EmailFormCont'>
                 <div className='InputEmail'>
@@ -143,9 +123,6 @@ function SignUp() {
                   />
                 </div>
                 <p>{errors.age?.message}</p>
-                <div className='Icons'>
-                  <img src={EmailIcon} alt="Age" style={{ width: '100%' }} />
-                </div>
               </div>
             </div>
             <div className='LogInButtonContainer'>

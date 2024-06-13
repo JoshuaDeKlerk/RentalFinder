@@ -87,34 +87,61 @@ const Bookings = () => {
 
   return (
     <div className="bookings">
-      <h2>Your Bookings</h2>
-      <div className="total-price">Total Price: {totalPrice}</div>
-      {bookings.length === 0 ? (
-        <div className="empty-bookings">You have no bookings.</div>
-      ) : (
-        <div className="bookings-container">
-          {bookings.map(booking => (
-            <div key={booking._id} className="booking-card">
-              <img src={booking.car.images[0]} alt={booking.car.name} />
-              <div className="booking-info">
-                <h3>{booking.car.name}</h3>
-                <p>Start Date: {new Date(booking.startDate).toLocaleDateString()}</p>
-                <p>End Date: {new Date(booking.endDate).toLocaleDateString()}</p>
-                <p>Total Price: {booking.totalPrice}</p>
-                <button onClick={() => handleRemoveBooking(booking._id)}>Remove Booking</button>
-                <button className="checkout-button" onClick={() => handleCheckout(booking)}>Checkout</button>
+      <div className="bookingsCont">
+        <h2>Your Bookings</h2>
+        <div className="total-price">
+          Total Price:
+          <div>R {totalPrice}</div>
+          </div>
+        {bookings.length === 0 ? (
+          <div className="empty-bookings">You have no bookings.</div>
+        ) : (
+          <div className="bookings-container">
+            {bookings.map(booking => (
+              <div key={booking._id} className="booking-card">
+                <img src={booking.car.images[0]} alt={booking.car.name} />
+                <div className="booking-info">
+                  <h3>{booking.car.name}</h3>
+                  <div className="DatesCont">
+                    <div className="DateCont">
+                      <h1>Start Date</h1>
+                      <p>{new Date(booking.startDate).toLocaleDateString()}</p>
+                    </div>
+                    <div className="DateCont">
+                      <h1>End Date</h1>
+                      <p>{new Date(booking.endDate).toLocaleDateString()}</p>
+                    </div>
+                  </div>
+                   
+                  <div className='totalPrice'>
+                    <p>Total Price</p>
+                    <p>R{booking.totalPrice}</p>
+                    </div>
+                  
+                  <div className="buttonsBooking">
+                    <button onClick={() => handleRemoveBooking(booking._id)}>Remove</button>
+                    <button className='checkout-button' onClick={() => handleCheckout(booking)}>Checkout</button>
+                  </div>
+                  
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-      )}
+            ))}
+          </div>
+        )}
 
-      <CheckoutModal
-        show={showModal}
-        handleClose={closeCheckout}
-        handlePayment={handlePayment}
-        bookingData={{ carName: selectedBooking?.car.name, totalPrice: selectedBooking?.totalPrice }}
-      />
+        <CheckoutModal
+          show={showModal}
+          handleClose={closeCheckout}
+          handlePayment={handlePayment}
+          bookingData={{ carName: selectedBooking?.car.name, totalPrice: selectedBooking?.totalPrice }}
+        />
+      </div>
+      
+      <footer className="footer">
+        <div className="footer-content">
+          <div>&copy; 2024 RentalFinder. All rights reserved.</div>
+        </div>
+      </footer>
     </div>
   );
 };

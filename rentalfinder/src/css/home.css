@@ -1,58 +1,156 @@
 .home {
   width: 100%;
-  padding: 20px;
-  background-color: #f0f2f5; /* Light background for modern look */
+  background-color: #ededed; /* Light background for modern look */
 }
 
-.banner {
-  text-align: center;
-  background-color: #007bff;
-  color: white;
-  padding: 50px 0;
-  margin-bottom: 20px;
-}
-
-.banner h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
-}
-
-.banner p {
-  font-size: 24px;
-}
-
-.filters {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.filter-controls {
+/* Hero Image */
+.heroImage{
+  height: 90vh;
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-image: url(../assets/images/Hero.png);
+  background-size: cover;
+  gap: 10px;
 }
 
-.filter-brands button {
-  background-color: #007bff;
+.heroImage h1{
+  font-size: 80px;
+  color: #ededed;
+}
+
+.heroImage p{
+  font-size: 30px;
+  color: #ededed;
+}
+
+.logoHeroImage{
+  height: 200px;
+}
+
+/* Filters */
+.FilterBoxSeperator{
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('../assets/images/separator.svg');
+}
+
+.FilterSection{
   color: white;
+  text-align: center;
+}
+
+.filtersContainer{
+  padding: 0 200px;
+}
+
+.filterControls{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.FilterBrandItems {
+  display: flex;
+  gap: 20px;
+  padding: 10px 0;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent line breaks */
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+}
+
+.FilterBrandItems::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
+.FilterBrandItems button {
+  flex: 0 0 auto; /* Prevent buttons from shrinking */
+  width: 100px;
+  height: 60px;
+  padding: 8px;
+  border-radius: 10px;
   border: none;
-  padding: 10px 15px;
-  margin: 5px;
-  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center ;
+  background-color: white;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.10);
+}
+
+.FilterBrandItems :hover{
+  background-color: #007bff;
+}
+
+.brandLogo{
+  height: 100%;
+  object-fit: contain;
+  padding: 0px;
+}
+
+.filter-location{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filter-location h1{
+  font-size: 30px;
+}
+
+.filter-price h1{
+  font-size: 30px;
+}
+
+.filter-price{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filterPriceRange{
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filterPriceRange p{
+  font-size: 20px;
+  color: black;
+}
+
+.filter-location select, .filterPriceRange input {
+  padding: 15px 20px;
+  border-radius: 50px;
+  border: 1px solid #ddd;
+  width: 100%;
+}
+
+.filter-clear{
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.filter-clear button {
+  padding: 15px 30px;
+  background-color: #007bff; 
+  color: #fff;
+  border: none;
+  border-radius: 50px;
   cursor: pointer;
 }
 
-.filter-brands button:hover {
-  background-color: #0056b3;
-}
-
-.filter-location select, .filter-price input {
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
+.filter-clear button:hover {
+  background-color: #0056b3; 
 }
 
 .products-container {
@@ -60,7 +158,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   justify-items: center;
-  padding: 0 200px;
+  padding: 20px 200px;
 }
 
 .products-container .product-card {
@@ -79,4 +177,26 @@
 
 .about p {
   font-size: 18px;
+}
+
+
+
+
+.footer {
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
+  justify-content: center;
+}
+
+.footer-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 8vh;
+  background-color: #007bff;
 }

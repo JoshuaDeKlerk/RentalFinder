@@ -34,16 +34,23 @@ const Favorites = () => {
 
   return (
     <div className="favorites">
-      <h2>Your Favorites</h2>
-      {favoriteProducts.length === 0 ? (
-        <div className="empty-favorites">You have no favorite cars.</div>
-      ) : (
-        <div className="favorites-container">
-          {favoriteProducts.map(product => (
-            <ProductCard key={product._id} product={product} onFavoriteToggle={handleFavoriteToggle} />
-          ))}
-        </div>
-      )}
+      <div className="favrouteCont">
+        <h2>Your Favorites</h2>
+        {favoriteProducts.length === 0 ? (
+          <div className="empty-favorites">You have no favorite cars.</div>
+        ) : (
+          <div className="favorites-container">
+            {favoriteProducts.map(product => (
+              <ProductCard key={product._id} product={product} onFavoriteToggle={handleFavoriteToggle} />
+            ))}
+          </div>
+        )}
+      </div>
+      <footer className="footer">
+      <div className="footer-content">
+        <div>&copy; 2024 RentalFinder. All rights reserved.</div>
+      </div>
+      </footer>
     </div>
   );
 };
