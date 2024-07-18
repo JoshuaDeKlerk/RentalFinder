@@ -141,6 +141,7 @@ Contributions are what make the open source community such an amazing place to b
 * **[Jaco Mostert](https://github.com/321008Jaco)** - *JavaScript, HTML, CSS, React, & MongoDB* 
 * **[Enzo De Vittorio](https://github.com/EnzoDV08)** - *JavaScript, HTML, CSS, React, & MongoDB* 
 * **[Armand Naude](https://github.com/Armand1711)** - *JavaScript, HTML, CSS, React, & MongoDB*
+* **[Tsungai Katsuro](https://github.com/TsungaiKats)** - *lecture*
 
 ## License
 
