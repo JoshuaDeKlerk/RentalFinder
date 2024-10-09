@@ -15,6 +15,7 @@
     "nodemon": "^3.1.0"
   },
   "script": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "insert-products": "node backend/insertProducts.js"
   }
 }

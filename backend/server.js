@@ -3,6 +3,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cors from 'cors';
+import path from 'path'; // Import the 'path' module to serve static assets
 import userRoutes from './routes/userRoutes.js';
 import productRoutes from './routes/productRoutes.js';
 import bookingRoutes from './routes/bookingRoutes.js';
@@ -42,6 +43,16 @@ app.use('/auth', authRoutes);
 app.use('/favorites', favoriteRoutes);
 app.use('/reviews', reviewRoutes);
 app.use('/upload', uploadRoutes);
+
+// Serve the React frontend in production
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../frontend/build')));
+
+  // Handle any requests that don't match API routes by serving the React frontend
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../frontend', 'build', 'index.html'));
+  });
+}
 
 // Start the server
 app.listen(PORT, () => {
