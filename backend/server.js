@@ -3,7 +3,11 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import path from 'path'; // Import the 'path' module to serve static assets
+import path from 'path'; 
+import { fileURLToPath } from 'url';
+import { dirname } from 'path'; 
+
+// Import your routes
 import userRoutes from './routes/userRoutes.js';
 import productRoutes from './routes/productRoutes.js';
 import bookingRoutes from './routes/bookingRoutes.js';
@@ -12,12 +16,16 @@ import favoriteRoutes from './routes/favoriteRoutes.js';
 import reviewRoutes from './routes/reviewRoutes.js';
 import uploadRoutes from './routes/uploadRoutes.js';
 
-dotenv.config(); // Load environment variables from .env
+// Define __dirname manually for ES Modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+dotenv.config(); // Load environment variables
 
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use('/uploads', express.static('uploads')); // Serve static files from the 'uploads' directory
+app.use('/uploads', express.static('uploads')); // Serve static files from 'uploads' directory
 
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGODB_URI;
@@ -27,12 +35,15 @@ if (!MONGO_URI) {
   process.exit(1); // Exit if no MongoDB URI is defined
 }
 
-// Connect to MongoDB using the URI from the .env file
-mongoose.connect(MONGO_URI)
+// Connect to MongoDB
+mongoose.connect(MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
   .then(() => console.log('MongoDB connected'))
   .catch(err => {
     console.error('Error connecting to MongoDB:', err);
-    process.exit(1); // Exit process if connection fails
+    process.exit(1); // Exit if connection fails
   });
 
 // Define routes
@@ -48,7 +59,6 @@ app.use('/upload', uploadRoutes);
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../frontend/build')));
 
-  // Handle any requests that don't match API routes by serving the React frontend
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, '../frontend', 'build', 'index.html'));
   });
