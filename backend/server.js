@@ -11,7 +11,7 @@ import favoriteRoutes from './routes/favoriteRoutes.js';
 import reviewRoutes from './routes/reviewRoutes.js';
 import uploadRoutes from './routes/uploadRoutes.js';
 
-dotenv.config();
+dotenv.config(); // Load environment variables from .env
 
 const app = express();
 app.use(cors());
@@ -23,16 +23,18 @@ const MONGO_URI = process.env.MONGODB_URI;
 
 if (!MONGO_URI) {
   console.error('MONGO_URI is not defined');
-  process.exit(1);
+  process.exit(1); // Exit if no MongoDB URI is defined
 }
 
-mongoose.connect(MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => console.log('MongoDB connected'))
-.catch(err => console.log('Error connecting to MongoDB:', err));
+// Connect to MongoDB using the URI from the .env file
+mongoose.connect(MONGO_URI)
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => {
+    console.error('Error connecting to MongoDB:', err);
+    process.exit(1); // Exit process if connection fails
+  });
 
+// Define routes
 app.use('/users', userRoutes);
 app.use('/products', productRoutes);
 app.use('/bookings', bookingRoutes);
@@ -41,7 +43,7 @@ app.use('/favorites', favoriteRoutes);
 app.use('/reviews', reviewRoutes);
 app.use('/upload', uploadRoutes);
 
+// Start the server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-
