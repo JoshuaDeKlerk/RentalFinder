@@ -1,0 +1,11 @@
+{
+  "name": "rentalfinder",
+  "version": "1.0.0",
+  "scripts": {
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "npm install --prefix backend && npm start --prefix backend"
+  },
+  "dependencies": {
+    "rentalfinder": "file:"
+  }
+}
