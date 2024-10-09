@@ -37,8 +37,8 @@ if (!MONGO_URI) {
 
 // Connect to MongoDB
 mongoose.connect(MONGO_URI, {
-  useNewUrlParser: true,  // This option is deprecated but left for backward compatibility
-  useUnifiedTopology: true, // Deprecated in newer MongoDB versions, but still OK to include
+  useNewUrlParser: true,  // Deprecated in newer MongoDB versions but okay to include
+  useUnifiedTopology: true, // Deprecated in newer MongoDB versions but okay to include
 })
   .then(() => console.log('MongoDB connected'))
   .catch(err => {
