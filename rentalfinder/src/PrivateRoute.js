@@ -1,6 +1,6 @@
 //rentalfinder/src/PrivateRoute.js
 import React, { useContext } from 'react';
-import { Route, Navigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { AuthContext } from './context/AuthContext';
 
 const PrivateRoute = ({ element: Component, ...rest }) => {
@@ -10,7 +10,3 @@ const PrivateRoute = ({ element: Component, ...rest }) => {
 };
 
 export default PrivateRoute;
-
-
-
-

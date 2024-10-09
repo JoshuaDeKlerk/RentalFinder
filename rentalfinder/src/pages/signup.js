@@ -1,4 +1,3 @@
-//rentalfinder/src/pages/SignUp.js
 import React, { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -8,8 +7,6 @@ import * as yup from 'yup';
 import { AuthContext } from '../context/AuthContext';
 import '../css/signIn.css';
 import Logo from "../assets/logo/LogoWhite.svg";
-import Google from "../assets/logo/Google.svg";
-import Facebook from "../assets/logo/Facebook.svg";
 import EmailIcon from "../assets/signup/Email.svg";
 import PasswordIcon from "../assets/signup/Password.svg";
 
@@ -167,14 +164,3 @@ function SignUp() {
 }
 
 export default SignUp;
-
-
-
-
-
-
-
-
-
-
-
