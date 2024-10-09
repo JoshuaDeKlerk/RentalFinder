@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { dirname } from 'path'; 
+import { dirname } from 'path';
 
 // Import routes
 import userRoutes from './routes/userRoutes.js';
