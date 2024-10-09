@@ -14,8 +14,9 @@
   "devDependencies": {
     "nodemon": "^3.1.0"
   },
-  "script": {
-    "start": "nodemon server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js",
     "insert-products": "node backend/insertProducts.js"
   }
 }
