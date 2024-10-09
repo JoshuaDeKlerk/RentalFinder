@@ -3,11 +3,11 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import path from 'path'; 
+import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path'; 
 
-// Import your routes
+// Import routes
 import userRoutes from './routes/userRoutes.js';
 import productRoutes from './routes/productRoutes.js';
 import bookingRoutes from './routes/bookingRoutes.js';
@@ -23,8 +23,8 @@ const __dirname = dirname(__filename);
 dotenv.config(); // Load environment variables
 
 const app = express();
-app.use(cors());
-app.use(express.json());
+app.use(cors()); // Enable Cross-Origin Resource Sharing (CORS)
+app.use(express.json()); // Parse JSON bodies
 app.use('/uploads', express.static('uploads')); // Serve static files from 'uploads' directory
 
 const PORT = process.env.PORT || 5000;
@@ -37,16 +37,16 @@ if (!MONGO_URI) {
 
 // Connect to MongoDB
 mongoose.connect(MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
+  useNewUrlParser: true,  // This option is deprecated but left for backward compatibility
+  useUnifiedTopology: true, // Deprecated in newer MongoDB versions, but still OK to include
 })
   .then(() => console.log('MongoDB connected'))
   .catch(err => {
     console.error('Error connecting to MongoDB:', err);
-    process.exit(1); // Exit if connection fails
+    process.exit(1); // Exit process if connection fails
   });
 
-// Define routes
+// Define API routes
 app.use('/users', userRoutes);
 app.use('/products', productRoutes);
 app.use('/bookings', bookingRoutes);
@@ -57,8 +57,10 @@ app.use('/upload', uploadRoutes);
 
 // Serve the React frontend in production
 if (process.env.NODE_ENV === 'production') {
+  // Serve the static files from the React app's build folder
   app.use(express.static(path.join(__dirname, '../rentalfinder/build')));
 
+  // For any other routes, serve the React frontend (index.html)
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, '../rentalfinder', 'build', 'index.html'));
   });
