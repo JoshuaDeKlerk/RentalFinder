@@ -1,152 +1,247 @@
-![RentalFinderLogo](./rentalfinder/src/assets/logo/LogoBlueSmall.svg)
+
+<br />
+
+<p align="center">
+  <img src="https://img.shields.io/github/repo-size/EnzoDV08/DV_200_Group2_Final?color=%000000" alt="GitHub repo size">
+  <img src="https://img.shields.io/github/watchers/EnzoDV08/DV_200_Group2_Final?color=%000000" alt="GitHub watchers">
+  <img src="https://img.shields.io/github/languages/count/EnzoDV08/DV_200_Group2_Final?color=%000000" alt="GitHub language count">
+  <img src="https://img.shields.io/github/languages/code-size/EnzoDV08/DV_200_Group2_Final?color=%000000" alt="GitHub code size in bytes">
+</p>
+
+
+<h5 align="center" style="padding:0;margin:0;">Zander Bezuidenhout 221205 </h5>
+<h5 align="center" style="padding:0;margin:0;">Jaco Mostert 231008 </h5>
+<h5 align="center" style="padding:0;margin:0;">Joshau De klerk 231207 </h5>
+<h5 align="center" style="padding:0;margin:0;">Armand Naude 231181  </h5>
+<h5 align="center" style="padding:0;margin:0;">Enzo De Vittorio 231244 </h5>
+<h6 align="center">[DV 200]</h6>
+</br>
+<p align="center">
+  <a href="https://github.com/EnzoDV08/DV_200_Group2_Final">
+    <img src="./rentalfinder/src/assets/logo/LogoBlueSmall.svg" alt="RentalFinder Logo" width="140" height="140">
+  </a >
+</p>
+  
+<h3 align="center">RentalFinder</h3>
+<h3 align="center">Web Application</h3>
+
+<p align="center">
+  An innovative car rental web application with efficient database management and user-centric design.<br>
+  <a href="https://github.com/EnzoDV08/DV_200_Group2_Final"><strong>Explore the docs »</strong></a>
+  <br />
+  <br />
+  <a href="https://drive.google.com/file/d/1V_Bio7-vWirczDP8M2kCATpgRIg2lBjI/view?usp=sharing">View Demo</a>
+  ·
+  <a href="https://github.com/EnzoDV08/DV_200_Group2_Final/issues">Report Bug</a>
+  ·
+  <a href="https://github.com/EnzoDV08/DV_200_Group2_Final/issues">Request Feature</a>
+</p>
+
 
 ## Table of Contents
 
 * [About the Project](#about-the-project)
-   * [Home, Sign In and Sign Up](#home-sign-in-and-sign-up)
-   * [Home](#home)
-   * [ Search Favorites Booking](#search-favorites-booking)
-   * [Details](#details-page)
+  * [Project Description](#project-description)
+  * [Built With](#built-with)
 * [Getting Started](#getting-started)
-  * [Backend](#backend)
-  * [Frontend](#frontend)
-  * [Setup](#setup)
+  * [Prerequisites](#prerequisites)
+  * [How to install](#how-to-install)
     * [Backend Setup](#backend-setup)
     * [Frontend Setup](#frontend-setup)
-  * [Running the Project](#running-the-project)
-    * [Running the Backend](#running-the-backend)
-    * [Running the Frontend](#running-the-frontend)
-* [Built With](#built-with)
+* [Features and Functionality](#features-and-functionality)
+* [Concept Process](#concept-process)
+   * [Ideation](#ideation)
+   * [Wireframes](#wireframes)
+* [Development Process](#development-process)
+   * [Implementation Process](#implementation-process)
+        * [Highlights](#highlights)
+        * [Challenges](#challenges)
+   * [Reviews and Testing](#reviews-and-testing)
+        * [Feedback from Reviews](#feedback-from-reviews)
+        * [Unit Tests](#unit-tests)
+   * [Future Implementation](#future-implementation)
+* [Final Outcome](#final-outcome)
+    * [Mockups](#mockups)
+    * [Video Demonstration](#video-demonstration)
+* [Conclusion](#conclusion)
+* [Roadmap](#roadmap)
 * [Contributing](#contributing)
-* [Authors](#authors)
 * [License](#license)
-* [Demo Recording](#demo-recording)
+* [Contact](#contact)
+* [Acknowledgements](#acknowledgements)
 
-## About The Project
 
-Term 2 showed a change in attention to MongoDB proficiency and efficient user data storage. Together with my team, we created a website for automobile rentals that included an API to display several rental car alternatives. Our abilities in database administration and back-end development have greatly improved as a result of this project.
+## About the Project
 
-### Home, Sign In and Sign Up
+![RentalFinderLogo](./rentalfinder/src/assets/mockups/MockUp1.png)
 
-![Home, Sign In and Sign Up](./rentalfinder/src/assets/mockups/MockUp1.png)
+### Project Description
 
-### Home
+RentalFinder is a comprehensive car rental web application designed to showcase car rental options through effective API integration and data management. This project emphasized learning MongoDB for data storage, and it bolstered the team's backend development skills.
 
-![Home](./rentalfinder/src/assets/mockups/MockUp2.png)
-
-### Search Favorites Booking
-
-![Search Favorites Booking](./rentalfinder/src/assets/mockups/MockUp3.png)
-
-### Details Page
-
-![Details Page](./rentalfinder/src/assets/mockups/MockUp4.png)
+### Built With
+[![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![HTML5](https://img.shields.io/badge/HTML-e34c26?style=for-the-badge&logo=html5&logoColor=white)](https://html.spec.whatwg.org/multipage/)
+[![CSS3](https://img.shields.io/badge/CSS-563d7c?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS) 
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
 
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+Follow these instructions to set up your copy of the project for development and testing.
 
-### Backend
+### Prerequisites
 
-1. Clone the repository:
+Ensure you have the following installed:
+- [Node.js](https://nodejs.org/)
+- [MongoDB](https://www.mongodb.com/)
 
-    ```sh
-    git clone https://github.com/EnzoDV08/DV_200_Group2_Final
+### How to install
+
+#### Backend Setup
+
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/EnzoDV08/DV_200_Group2_Final.git
     cd rentalfinder/backend
     ```
-
-2. Install backend dependencies:
-
-    ```sh
+2. **Install backend dependencies**:
+    ```bash
     npm install
     ```
-
-### Frontend
-
-1. Navigate to the frontend directory:
-
-    ```sh
-    cd ../rentalfinder
-    ```
-
-2. Install frontend dependencies:
-
-    ```sh
-    npm install react-scripts
-    ```
-
-## Setup
-
-### Backend Setup
-
-1. Create a `.env` file in the `backend` directory and add the following environment variables:
-
+3. **Create a `.env` file** in the `backend` directory and add:
     ```env
     PORT=5000
     MONGO_URI=mongodb+srv://Enzo:enzo12345@rentalfinder.ufywffo.mongodb.net/react_db?retryWrites=true&w=majority&appName=RentalFinder
     ```
-
-2. Ensure your MongoDB server is running. You can start MongoDB with the following command:
-
-    ```sh
+4. **Ensure MongoDB server is running**:
+    ```bash
     mongod
     ```
 
-## Running the Project
+#### Frontend Setup
 
-### Running the Backend
-
-1. Start the backend server:
-
-    ```sh
-    cd backend
-    npm start
+1. **Navigate to the frontend directory**:
+    ```bash
+    cd ../rentalfinder
+    ```
+2. **Install frontend dependencies**:
+    ```bash
+    npm install react-scripts
     ```
 
-    The backend server will run on `http://localhost:5000`.
 
-### Running the Frontend
+## Features and Functionality
 
-1. Start the frontend development server:
+### Core Features
+- **User Authentication**: Secure sign-in and sign-up options.
+- **Car Search and Booking**: Browse available cars and make bookings.
+- **Favorites**: Save preferred car listings.
+- **Responsive Design**: Mobile and desktop-friendly UI.
+- **Details Page**: View detailed information about selected cars.
 
-    ```sh
-    cd rentalfinder
-    npm start
-    ```
 
-    The frontend server will run on `http://localhost:5000`.
+## Concept Process
 
-## Built With
+Initial brainstorming focused on creating a seamless car rental experience with a user-friendly interface and reliable data handling.
 
-* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-* [React](https://react.dev/)
-* [Bootstrap](https://getbootstrap.com/)
-* [MongoDB](https://www.mongodb.com/)
+### Ideation
+
+The goal was to design an application that balances functionality and simplicity, catering to users looking for an efficient car rental service.
+
+### Wireframes
+
+![Home, Sign In and Sign Up](./rentalfinder/src/assets/mockups/MockUp1.png)
+![Home](./rentalfinder/src/assets/mockups/MockUp2.png)
+![Search Favorites Booking](./rentalfinder/src/assets/mockups/MockUp3.png)
+![Details Page](./rentalfinder/src/assets/mockups/MockUp4.png)
+
+
+## Development Process
+
+### Implementation Process
+
+* **Backend**: Built using Node.js and MongoDB to handle data operations and API requests.
+* **Frontend**: Developed with React and Bootstrap for an interactive and responsive UI.
+
+#### Highlights
+* Seamless integration between backend and frontend.
+* Effective API calls for real-time car data updates.
+
+#### Challenges
+* Managing user authentication across multiple components.
+* Ensuring efficient database queries.
+
+### Reviews & Testing
+
+#### Feedback from Reviews
+
+Feedback noted the application's clean design and smooth user experience. Suggestions were made for improving data loading times.
+
+#### Unit Tests
+
+Basic testing was conducted to ensure user authentication, data retrieval, and booking functionality.
+
+
+### Future Implementation
+
+* Add payment gateway for secure online transactions.
+* Implement user profile customization.
+* Include multi-language support.
+
+
+## Final Outcome
+
+### Mockups
+
+![Home, Sign In and Sign Up](./rentalfinder/src/assets/mockups/MockUp1.png)
+![Home](./rentalfinder/src/assets/mockups/MockUp2.png)
+![Search Favorites Booking](./rentalfinder/src/assets/mockups/MockUp3.png)
+![Details Page](./rentalfinder/src/assets/mockups/MockUp4.png)
+
+### Video Demonstration
+
+[View Demo](https://drive.google.com/file/d/1V_Bio7-vWirczDP8M2kCATpgRIg2lBjI/view?usp=sharing)
+
+
+## Roadmap
+
+- Add payment integration for seamless bookings.
+- Improve search filters with more sorting options.
+- Enable booking history and transaction logs for users.
+
 
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions are what make the open-source community such a fantastic place to learn and create. Any contributions are **greatly appreciated**.
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+1. Fork the repository.
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`).
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
+4. Push to the branch (`git push origin feature/AmazingFeature`).
+5. Open a pull request.
 
-## Authors
-
-* **[Zander Bezuidenhout](https://github.com/ZanderBez)** - *JavaScript, HTML, CSS, React, & MongoDB* - 
-* **[Joshua De Klerk](https://github.com/JoshuaDeKlerk)** - *JavaScript, HTML, CSS, React, & MongoDB* -
-* **[Jaco Mostert](https://github.com/321008Jaco)** - *JavaScript, HTML, CSS, React, & MongoDB* 
-* **[Enzo De Vittorio](https://github.com/EnzoDV08)** - *JavaScript, HTML, CSS, React, & MongoDB* 
-* **[Armand Naude](https://github.com/Armand1711)** - *JavaScript, HTML, CSS, React, & MongoDB*
-* **[Tsungai Katsuro](https://github.com/TsungaiKats)** - *Lecture*
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+Distributed under the MIT License. See `LICENSE` for more information.
 
-## Demo Recording
 
-[Demo Vid](https://drive.google.com/file/d/1V_Bio7-vWirczDP8M2kCATpgRIg2lBjI/view?usp=sharing)
+## Contact
+
+- **Zander Bezuidenhout** - [GitHub](https://github.com/ZanderBez)
+- **Jaco Mostert** - [GitHub](https://github.com/321008Jaco)
+- **Joshua De Klerk** - [GitHub](https://github.com/JoshuaDeKlerk)
+- **Armand Naude** - [GitHub](https://github.com/Armand1711)
+- **Enzo De Vittorio** - [GitHub](https://github.com/EnzoDV08)
+- **Project Link** - [RentalFinder](https://github.com/EnzoDV08/DV_200_Group2_Final)
+
+
+## Acknowledgements
+
+* [MongoDB Documentation](https://docs.mongodb.com/)
+* [Node.js Documentation](https://nodejs.org/en/docs/)
+* [React Documentation](https://reactjs.org/docs/getting-started.html)
+* [Bootstrap Documentation](https://getbootstrap.com/docs/)
