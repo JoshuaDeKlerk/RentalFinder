@@ -1,35 +1,6 @@
-
-<br />
-
-<p align="center">
-  <img src="https://img.shields.io/github/repo-size/EnzoDV08/DV_200_Group2_Final?color=%000000" alt="GitHub repo size">
-  <img src="https://img.shields.io/github/watchers/EnzoDV08/DV_200_Group2_Final?color=%000000" alt="GitHub watchers">
-  <img src="https://img.shields.io/github/languages/count/EnzoDV08/DV_200_Group2_Final?color=%000000" alt="GitHub language count">
-  <img src="https://img.shields.io/github/languages/code-size/EnzoDV08/DV_200_Group2_Final?color=%000000" alt="GitHub code size in bytes">
-</p>
-
-
-<h5 align="center" style="padding:0;margin:0;">Zander Bezuidenhout 221205 </h5>
-<h5 align="center" style="padding:0;margin:0;">Jaco Mostert 231008 </h5>
-<h5 align="center" style="padding:0;margin:0;">Joshau De klerk 231207 </h5>
-<h5 align="center" style="padding:0;margin:0;">Armand Naude 231181  </h5>
-<h5 align="center" style="padding:0;margin:0;">Enzo De Vittorio 231244 </h5>
-<h6 align="center">[DV 200]</h6>
-</br>
-<p align="center">
-  <a href="https://github.com/EnzoDV08/DV_200_Group2_Final">
-    <img src="./rentalfinder/src/assets/logo/LogoBlueSmall.svg" alt="RentalFinder Logo" width="140" height="140">
-  </a >
-</p>
-  
-<h3 align="center">RentalFinder</h3>
-<h3 align="center">Web Application</h3>
+![RentalFinder Header Image](./rentalfinder/src/assets/HeaderImageReadMe.png)
 
 <p align="center">
-  An innovative car rental web application with efficient database management and user-centric design.<br>
-  <a href="https://github.com/EnzoDV08/DV_200_Group2_Final"><strong>Explore the docs »</strong></a>
-  <br />
-  <br />
   <a href="https://drive.google.com/file/d/1V_Bio7-vWirczDP8M2kCATpgRIg2lBjI/view?usp=sharing">View Demo</a>
   ·
   <a href="https://github.com/EnzoDV08/DV_200_Group2_Final/issues">Report Bug</a>
